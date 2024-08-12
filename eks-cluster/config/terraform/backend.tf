@@ -2,10 +2,15 @@
 # Backend Config Variables Docs
 # https://terraspace.cloud/docs/config/backend/variables/
 terraform {
-  backend "s3" {
-    bucket         = "<%= expansion('terraform-state-:ACCOUNT-:REGION-:ENV') %>"
-    key            = "<%= expansion(':PROJECT/:REGION/:APP/:MOD_NAME/:ENV/:BUILD_DIR/terraform.tfstate') %>"
-    region         = "<%= expansion(':REGION') %>"
-    dynamodb_table = "terraform_locks"
+  
+  backend "local" {
+    path = "terraform.tfstate"
   }
+
+  # backend "s3" {
+  #   bucket         = "<%= expansion('terraform-state-:ACCOUNT-:REGION-:ENV') %>"
+  #   key            = "<%= expansion(':PROJECT/:REGION/:APP/:MOD_NAME/:ENV/:BUILD_DIR/terraform.tfstate') %>"
+  #   region         = "<%= expansion(':REGION') %>"
+  #   dynamodb_table = "terraform_locks"
+  # }
 }
