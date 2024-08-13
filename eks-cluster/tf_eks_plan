@@ -1,0 +1,2064 @@
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  + create
+ <= read (data resources)
+
+Terraform will perform the following actions:
+  # aws_iam_instance_profile.karpenter will be created
+  + resource "aws_iam_instance_profile" "karpenter" {
+      + arn         = (known after apply)
+      + create_date = (known after apply)
+      + id          = (known after apply)
+      + name        = "KarpenterNodeInstanceProfile-eks-dev-cluster"
+      + name_prefix = (known after apply)
+      + path        = "/"
+      + role        = "eks-managed-ng-role"
+      + tags_all    = (known after apply)
+      + unique_id   = (known after apply)
+    }
+  # aws_iam_policy.node_additional will be created
+  + resource "aws_iam_policy" "node_additional" {
+      + arn              = (known after apply)
+      + attachment_count = (known after apply)
+      + description      = "usage of node additional policy for eks-dev-cluster-eks-mng"
+      + id               = (known after apply)
+      + name             = "eks-dev-cluster-eks-mng-additional-iam-policy"
+      + name_prefix      = (known after apply)
+      + path             = "/"
+      + policy           = jsonencode(
+            {
+              + Statement = [
+                  + {
+                      + Action   = [
+                          + "ec2:Describe*",
+                        ]
+                      + Effect   = "Allow"
+                      + Resource = "*"
+                    },
+                ]
+              + Version   = "2012-10-17"
+            }
+        )
+      + policy_id        = (known after apply)
+      + tags             = {
+          + "Env"        = "dev"
+          + "Example"    = "eks-dev-cluster-eks-mng"
+          + "GithubOrg"  = "terraform-aws-modules"
+          + "GithubRepo" = "terraform-aws-eks"
+        }
+      + tags_all         = {
+          + "Env"        = "dev"
+          + "Example"    = "eks-dev-cluster-eks-mng"
+          + "GithubOrg"  = "terraform-aws-modules"
+          + "GithubRepo" = "terraform-aws-eks"
+        }
+    }
+  # aws_iam_role.this["multiple"] will be created
+  + resource "aws_iam_role" "this" {
+      + arn                   = (known after apply)
+      + assume_role_policy    = jsonencode(
+            {
+              + Statement = [
+                  + {
+                      + Action    = "sts:AssumeRole"
+                      + Effect    = "Allow"
+                      + Principal = {
+                          + Service = "ec2.amazonaws.com"
+                        }
+                      + Sid       = "Example"
+                    },
+                ]
+              + Version   = "2012-10-17"
+            }
+        )
+      + create_date           = (known after apply)
+      + force_detach_policies = false
+      + id                    = (known after apply)
+      + managed_policy_arns   = (known after apply)
+      + max_session_duration  = 3600
+      + name                  = "ex-multiple"
+      + name_prefix           = (known after apply)
+      + path                  = "/"
+      + tags                  = {
+          + "Env"        = "dev"
+          + "Example"    = "eks-dev-cluster-eks-mng"
+          + "GithubOrg"  = "terraform-aws-modules"
+          + "GithubRepo" = "terraform-aws-eks"
+        }
+      + tags_all              = {
+          + "Env"        = "dev"
+          + "Example"    = "eks-dev-cluster-eks-mng"
+          + "GithubOrg"  = "terraform-aws-modules"
+          + "GithubRepo" = "terraform-aws-eks"
+        }
+      + unique_id             = (known after apply)
+
+      + inline_policy (known after apply)
+    }
+  # aws_iam_role.this["single"] will be created
+  + resource "aws_iam_role" "this" {
+      + arn                   = (known after apply)
+      + assume_role_policy    = jsonencode(
+            {
+              + Statement = [
+                  + {
+                      + Action    = "sts:AssumeRole"
+                      + Effect    = "Allow"
+                      + Principal = {
+                          + Service = "ec2.amazonaws.com"
+                        }
+                      + Sid       = "Example"
+                    },
+                ]
+              + Version   = "2012-10-17"
+            }
+        )
+      + create_date           = (known after apply)
+      + force_detach_policies = false
+      + id                    = (known after apply)
+      + managed_policy_arns   = (known after apply)
+      + max_session_duration  = 3600
+      + name                  = "ex-single"
+      + name_prefix           = (known after apply)
+      + path                  = "/"
+      + tags                  = {
+          + "Env"        = "dev"
+          + "Example"    = "eks-dev-cluster-eks-mng"
+          + "GithubOrg"  = "terraform-aws-modules"
+          + "GithubRepo" = "terraform-aws-eks"
+        }
+      + tags_all              = {
+          + "Env"        = "dev"
+          + "Example"    = "eks-dev-cluster-eks-mng"
+          + "GithubOrg"  = "terraform-aws-modules"
+          + "GithubRepo" = "terraform-aws-eks"
+        }
+      + unique_id             = (known after apply)
+
+      + inline_policy (known after apply)
+    }
+  # aws_kms_key.eks will be created
+  + resource "aws_kms_key" "eks" {
+      + arn                                = (known after apply)
+      + bypass_policy_lockout_safety_check = false
+      + customer_master_key_spec           = "SYMMETRIC_DEFAULT"
+      + deletion_window_in_days            = 7
+      + description                        = "EKS Secret Encryption Key"
+      + enable_key_rotation                = true
+      + id                                 = (known after apply)
+      + is_enabled                         = true
+      + key_id                             = (known after apply)
+      + key_usage                          = "ENCRYPT_DECRYPT"
+      + multi_region                       = (known after apply)
+      + policy                             = (known after apply)
+      + rotation_period_in_days            = (known after apply)
+      + tags                               = {
+          + "Env"        = "dev"
+          + "Example"    = "eks-dev-cluster-eks-mng"
+          + "GithubOrg"  = "terraform-aws-modules"
+          + "GithubRepo" = "terraform-aws-eks"
+        }
+      + tags_all                           = {
+          + "Env"        = "dev"
+          + "Example"    = "eks-dev-cluster-eks-mng"
+          + "GithubOrg"  = "terraform-aws-modules"
+          + "GithubRepo" = "terraform-aws-eks"
+        }
+    }
+  # aws_security_group.additional will be created
+  + resource "aws_security_group" "additional" {
+      + arn                    = (known after apply)
+      + description            = "Managed by Terraform"
+      + egress                 = (known after apply)
+      + id                     = (known after apply)
+      + ingress                = [
+          + {
+              + cidr_blocks      = [
+                  + "10.20.0.0/16",
+                ]
+              + from_port        = 22
+              + ipv6_cidr_blocks = []
+              + prefix_list_ids  = []
+              + protocol         = "tcp"
+              + security_groups  = []
+              + self             = false
+              + to_port          = 22
+                # (1 unchanged attribute hidden)
+            },
+        ]
+      + name                   = (known after apply)
+      + name_prefix            = "eks-dev-cluster-eks-mng-additional-sg"
+      + owner_id               = (known after apply)
+      + revoke_rules_on_delete = false
+      + tags                   = {
+          + "Env"        = "dev"
+          + "Example"    = "eks-dev-cluster-eks-mng"
+          + "GithubOrg"  = "terraform-aws-modules"
+          + "GithubRepo" = "terraform-aws-eks"
+        }
+      + tags_all               = {
+          + "Env"        = "dev"
+          + "Example"    = "eks-dev-cluster-eks-mng"
+          + "GithubOrg"  = "terraform-aws-modules"
+          + "GithubRepo" = "terraform-aws-eks"
+        }
+      + vpc_id                 = "vpc-0c4b1674c20159053"
+    }
+  # aws_security_group.remote_access will be created
+  + resource "aws_security_group" "remote_access" {
+      + arn                    = (known after apply)
+      + description            = "Allow remote SSH access"
+      + egress                 = [
+          + {
+              + cidr_blocks      = [
+                  + "0.0.0.0/0",
+                ]
+              + from_port        = 0
+              + ipv6_cidr_blocks = [
+                  + "::/0",
+                ]
+              + prefix_list_ids  = []
+              + protocol         = "-1"
+              + security_groups  = []
+              + self             = false
+              + to_port          = 0
+                # (1 unchanged attribute hidden)
+            },
+        ]
+      + id                     = (known after apply)
+      + ingress                = [
+          + {
+              + cidr_blocks      = [
+                  + "10.0.0.0/8",
+                ]
+              + description      = "SSH access"
+              + from_port        = 22
+              + ipv6_cidr_blocks = []
+              + prefix_list_ids  = []
+              + protocol         = "tcp"
+              + security_groups  = []
+              + self             = false
+              + to_port          = 22
+            },
+        ]
+      + name                   = (known after apply)
+      + name_prefix            = "eks-dev-cluster-eks-mng-remote-access"
+      + owner_id               = (known after apply)
+      + revoke_rules_on_delete = false
+      + tags                   = {
+          + "Env"        = "dev"
+          + "Example"    = "eks-dev-cluster-eks-mng"
+          + "GithubOrg"  = "terraform-aws-modules"
+          + "GithubRepo" = "terraform-aws-eks"
+          + "Name"       = "eks-dev-cluster-eks-mng-remote"
+        }
+      + tags_all               = {
+          + "Env"        = "dev"
+          + "Example"    = "eks-dev-cluster-eks-mng"
+          + "GithubOrg"  = "terraform-aws-modules"
+          + "GithubRepo" = "terraform-aws-eks"
+          + "Name"       = "eks-dev-cluster-eks-mng-remote"
+        }
+      + vpc_id                 = "vpc-0c4b1674c20159053"
+    }
+
+  # helm_release.karpenter will be created
+  + resource "helm_release" "karpenter" {
+      + atomic                     = false
+      + chart                      = "karpenter"
+      + cleanup_on_fail            = false
+      + create_namespace           = false
+      + dependency_update          = false
+      + disable_crd_hooks          = false
+      + disable_openapi_validation = false
+      + disable_webhooks           = false
+      + force_update               = false
+      + id                         = (known after apply)
+      + lint                       = false
+      + manifest                   = (known after apply)
+      + max_history                = 0
+      + metadata                   = (known after apply)
+      + name                       = "karpenter"
+      + namespace                  = "karpenter"
+      + pass_credentials           = false
+      + recreate_pods              = false
+      + render_subchart_notes      = true
+      + replace                    = false
+      + repository                 = "https://charts.karpenter.sh"
+      + reset_values               = false
+      + reuse_values               = false
+      + skip_crds                  = false
+      + status                     = "deployed"
+      + timeout                    = 300
+      + verify                     = false
+      + version                    = "0.7.2"
+      + wait                       = true
+      + wait_for_jobs              = false
+
+      + set {
+          + name  = "aws.defaultInstanceProfile"
+          + value = "KarpenterNodeInstanceProfile-eks-dev-cluster"
+            # (1 unchanged attribute hidden)
+        }
+      + set {
+          + name  = "clusterEndpoint"
+          + value = (known after apply)
+            # (1 unchanged attribute hidden)
+        }
+      + set {
+          + name  = "clusterName"
+          + value = "eks-dev-cluster"
+            # (1 unchanged attribute hidden)
+        }
+      + set {
+          + name  = "defaultProvisioner.create"
+          + value = "false"
+            # (1 unchanged attribute hidden)
+        }
+      + set {
+          + name  = "logLevel"
+          + value = "debug"
+            # (1 unchanged attribute hidden)
+        }
+      + set {
+          + name  = "serviceAccount.annotations.eks\\.amazonaws\\.com/role-arn"
+          + value = (known after apply)
+            # (1 unchanged attribute hidden)
+        }
+    }
+
+  # module.ebs_kms_key.data.aws_iam_policy_document.this[0] will be read during apply
+  # (config refers to values not yet known)
+ <= data "aws_iam_policy_document" "this" {
+      + id                        = (known after apply)
+      + json                      = (known after apply)
+      + minified_json             = (known after apply)
+      + override_policy_documents = []
+      + source_policy_documents   = []
+
+      + statement {
+          + actions   = [
+              + "kms:*",
+            ]
+          + resources = [
+              + "*",
+            ]
+          + sid       = "Default"
+
+          + principals {
+              + identifiers = [
+                  + "arn:aws:iam::019819012441:root",
+                ]
+              + type        = "AWS"
+            }
+        }
+      + statement {
+          + actions   = [
+              + "kms:CancelKeyDeletion",
+              + "kms:Create*",
+              + "kms:Delete*",
+              + "kms:Describe*",
+              + "kms:Disable*",
+              + "kms:Enable*",
+              + "kms:Get*",
+              + "kms:ImportKeyMaterial",
+              + "kms:List*",
+              + "kms:Put*",
+              + "kms:ReplicateKey",
+              + "kms:Revoke*",
+              + "kms:ScheduleKeyDeletion",
+              + "kms:TagResource",
+              + "kms:UntagResource",
+              + "kms:Update*",
+            ]
+          + resources = [
+              + "*",
+            ]
+          + sid       = "KeyAdministration"
+
+          + principals {
+              + identifiers = [
+                  + "arn:aws:iam::019819012441:user/Whiz_User_85401.25377679",
+                ]
+              + type        = "AWS"
+            }
+        }
+      + statement {
+          + actions   = [
+              + "kms:Decrypt",
+              + "kms:DescribeKey",
+              + "kms:Encrypt",
+              + "kms:GenerateDataKey*",
+              + "kms:ReEncrypt*",
+            ]
+          + resources = [
+              + "*",
+            ]
+          + sid       = "KeyServiceRolesASG"
+
+          + principals {
+              + identifiers = [
+                  + "arn:aws:iam::019819012441:role/aws-service-role/autoscaling.amazonaws.com/AWSServiceRoleForAutoScaling",
+                  + (known after apply),
+                ]
+              + type        = "AWS"
+            }
+        }
+      + statement {
+          + actions   = [
+              + "kms:CreateGrant",
+            ]
+          + resources = [
+              + "*",
+            ]
+          + sid       = "KeyServiceRolesASGPersistentVol"
+
+          + condition {
+              + test     = "Bool"
+              + values   = [
+                  + "true",
+                ]
+              + variable = "kms:GrantIsForAWSResource"
+            }
+
+          + principals {
+              + identifiers = [
+                  + "arn:aws:iam::019819012441:role/aws-service-role/autoscaling.amazonaws.com/AWSServiceRoleForAutoScaling",
+                  + (known after apply),
+                ]
+              + type        = "AWS"
+            }
+        }
+    }
+
+  # module.ebs_kms_key.aws_kms_alias.this["eks/eks-dev-cluster-eks-mng/ebs"] will be created
+  + resource "aws_kms_alias" "this" {
+      + arn            = (known after apply)
+      + id             = (known after apply)
+      + name           = "alias/eks/eks-dev-cluster-eks-mng/ebs"
+      + name_prefix    = (known after apply)
+      + target_key_arn = (known after apply)
+      + target_key_id  = (known after apply)
+    }
+
+  # module.ebs_kms_key.aws_kms_key.this[0] will be created
+  + resource "aws_kms_key" "this" {
+      + arn                                = (known after apply)
+      + bypass_policy_lockout_safety_check = false
+      + customer_master_key_spec           = "SYMMETRIC_DEFAULT"
+      + description                        = "Customer managed key to encrypt EKS managed node group volumes"
+      + enable_key_rotation                = true
+      + id                                 = (known after apply)
+      + is_enabled                         = true
+      + key_id                             = (known after apply)
+      + key_usage                          = "ENCRYPT_DECRYPT"
+      + multi_region                       = false
+      + policy                             = (known after apply)
+      + rotation_period_in_days            = (known after apply)
+      + tags                               = {
+          + "Env"        = "dev"
+          + "Example"    = "eks-dev-cluster-eks-mng"
+          + "GithubOrg"  = "terraform-aws-modules"
+          + "GithubRepo" = "terraform-aws-eks"
+        }
+      + tags_all                           = {
+          + "Env"        = "dev"
+          + "Example"    = "eks-dev-cluster-eks-mng"
+          + "GithubOrg"  = "terraform-aws-modules"
+          + "GithubRepo" = "terraform-aws-eks"
+        }
+    }
+
+  # module.eks.data.aws_eks_addon_version.this["coredns"] will be read during apply
+  # (depends on a resource or a module with changes pending)
+ <= data "aws_eks_addon_version" "this" {
+      + addon_name         = "coredns"
+      + id                 = (known after apply)
+      + kubernetes_version = "1.30"
+      + most_recent        = true
+      + version            = (known after apply)
+    }
+
+  # module.eks.data.aws_eks_addon_version.this["kube-proxy"] will be read during apply
+  # (depends on a resource or a module with changes pending)
+ <= data "aws_eks_addon_version" "this" {
+      + addon_name         = "kube-proxy"
+      + id                 = (known after apply)
+      + kubernetes_version = "1.30"
+      + most_recent        = true
+      + version            = (known after apply)
+    }
+
+  # module.eks.data.aws_eks_addon_version.this["vpc-cni"] will be read during apply
+  # (depends on a resource or a module with changes pending)
+ <= data "aws_eks_addon_version" "this" {
+      + addon_name         = "vpc-cni"
+      + id                 = (known after apply)
+      + kubernetes_version = "1.30"
+      + most_recent        = true
+      + version            = (known after apply)
+    }
+
+  # module.eks.data.tls_certificate.this[0] will be read during apply
+  # (config refers to values not yet known)
+ <= data "tls_certificate" "this" {
+      + certificates = (known after apply)
+      + id           = (known after apply)
+      + url          = (known after apply)
+    }
+
+  # module.eks.aws_cloudwatch_log_group.this[0] will be created
+  + resource "aws_cloudwatch_log_group" "this" {
+      + arn               = (known after apply)
+      + id                = (known after apply)
+      + log_group_class   = (known after apply)
+      + name              = "/aws/eks/eks-dev-cluster-eks-mng/cluster"
+      + name_prefix       = (known after apply)
+      + retention_in_days = 90
+      + skip_destroy      = false
+      + tags              = {
+          + "Name" = "/aws/eks/eks-dev-cluster-eks-mng/cluster"
+        }
+      + tags_all          = {
+          + "Name" = "/aws/eks/eks-dev-cluster-eks-mng/cluster"
+        }
+    }
+
+  # module.eks.aws_eks_access_entry.this["cluster_creator"] will be created
+  + resource "aws_eks_access_entry" "this" {
+      + access_entry_arn  = (known after apply)
+      + cluster_name      = "eks-dev-cluster-eks-mng"
+      + created_at        = (known after apply)
+      + id                = (known after apply)
+      + kubernetes_groups = (known after apply)
+      + modified_at       = (known after apply)
+      + principal_arn     = "arn:aws:iam::019819012441:user/Whiz_User_85401.25377679"
+      + tags_all          = (known after apply)
+      + type              = "STANDARD"
+      + user_name         = (known after apply)
+    }
+
+  # module.eks.aws_eks_access_policy_association.this["cluster_creator_admin"] will be created
+  + resource "aws_eks_access_policy_association" "this" {
+      + associated_at = (known after apply)
+      + cluster_name  = "eks-dev-cluster-eks-mng"
+      + id            = (known after apply)
+      + modified_at   = (known after apply)
+      + policy_arn    = "arn:aws:eks::aws:cluster-access-policy/AmazonEKSClusterAdminPolicy"
+      + principal_arn = "arn:aws:iam::019819012441:user/Whiz_User_85401.25377679"
+
+      + access_scope {
+          
++ type = "cluster"
+        }
+    }
+
+  # module.eks.aws_eks_addon.before_compute["vpc-cni"] will be created
+  + resource "aws_eks_addon" "before_compute" {
+      + addon_name                  = "vpc-cni"
+      + addon_version               = (known after apply)
+      + arn                         = (known after apply)
+      + cluster_name                = "eks-dev-cluster-eks-mng"
+      + configuration_values        = jsonencode(
+            {
+              + env = {
+                  + ENABLE_PREFIX_DELEGATION = "true"
+                  + WARM_PREFIX_TARGET       = "1"
+                }
+            }
+        )
+      + created_at                  = (known after apply)
+      + id                          = (known after apply)
+      + modified_at                 = (known after apply)
+      + preserve                    = true
+      + resolve_conflicts_on_create = "OVERWRITE"
+      + resolve_conflicts_on_update = "OVERWRITE"
+      + service_account_role_arn    = (known after apply)
+      + tags_all                    = (known after apply)
+
+      + timeouts {}
+    }
+
+  # module.eks.aws_eks_addon.this["coredns"] will be created
+  + resource "aws_eks_addon" "this" {
+      + addon_name                  = "coredns"
+      + addon_version               = (known after apply)
+      + arn                         = (known after apply)
+      + cluster_name                = "eks-dev-cluster-eks-mng"
+      + configuration_values        = (known after apply)
+      + created_at                  = (known after apply)
+      + id                          = (known after apply)
+      + modified_at                 = (known after apply)
+      + preserve                    = true
+      + resolve_conflicts_on_create = "OVERWRITE"
+      + resolve_conflicts_on_update = "OVERWRITE"
+      + tags_all                    = (known after apply)
+
+      + timeouts {}
+    }
+
+  # module.eks.aws_eks_addon.this["kube-proxy"] will be created
+  + resource "aws_eks_addon" "this" {
+      + addon_name                  = "kube-proxy"
+      + addon_version               = (known after apply)
+      + arn                         = (known after apply)
+      + cluster_name                = "eks-dev-cluster-eks-mng"
+      + configuration_values        = (known after apply)
+      + created_at                  = (known after apply)
+      + id                          = (known after apply)
+      + modified_at                 = (known after apply)
+      + preserve                    = true
+      + resolve_conflicts_on_create = "OVERWRITE"
+      + resolve_conflicts_on_update = "OVERWRITE"
+      + tags_all                    = (known after apply)
+
+      + timeouts {}
+    }
+
+  # module.eks.aws_eks_cluster.this[0] will be created
+  + resource "aws_eks_cluster" "this" {
+      + arn                           = (known after apply)
+      + bootstrap_self_managed_addons = true
+      + certificate_authority         = (known after apply)
+      + cluster_id                    = (known after apply)
+      + created_at                    = (known after apply)
+      + enabled_cluster_log_types     = [
+          + "api",
+          + "audit",
+          + "authenticator",
+        ]
+      + endpoint                      = (known after apply)
+      + id                            = (known after apply)
+      + identity                      = (known after apply)
+      + name                          = "eks-dev-cluster-eks-mng"
+      + platform_version              = (known after apply)
+      + role_arn                      = (known after apply)
+      + status                        = (known after apply)
+      + tags                          = {
+          + "terraform-aws-modules" = "eks"
+        }
+      + tags_all                      = {
+          + "terraform-aws-modules" = "eks"
+        }
+      + version                       = "1.30"
+
+      + access_config {
+          + authentication_mode                         = "API_AND_CONFIG_MAP"
+          + bootstrap_cluster_creator_admin_permissions = false
+        }
+
+      + encryption_config {
+          + resources = [
+              + "secrets",
+            ]
+
+          + provider {
+              + key_arn = (known after apply)
+            }
+        }
+
+      + kubernetes_network_config {
+          + ip_family         = "ipv4"
+          + service_ipv4_cidr = (known after apply)
+          + service_ipv6_cidr = (known after apply)
+        }
+
+      + timeouts {}
+
+      + upgrade_policy {
+          + support_type = "STANDARD"
+        }
+
+      + vpc_config {
+          + cluster_security_group_id = (known after apply)
+          + endpoint_private_access   = true
+          + endpoint_public_access    = true
+          + public_access_cidrs       = [
+              + "0.0.0.0/0",
+            ]
+          + security_group_ids        = (known after apply)
+          + subnet_ids                = [
+              + "subnet-02210ae8f43f2a2ae",
+              + "subnet-03bf999b681376a8a",
+            ]
+          + vpc_id                    = (known after apply)
+        }
+    }
+
+  # module.eks.aws_iam_openid_connect_provider.oidc_provider[0] will be created
+  + resource "aws_iam_openid_connect_provider" "oidc_provider" {
+      + arn             = (known after apply)
+      + client_id_list  = [
+          + "sts.amazonaws.com",
+        ]
+      + id              = (known after apply)
+      + tags            = {
+          + "Name" = "eks-dev-cluster-eks-mng-eks-irsa"
+        }
+      + tags_all        = {
+          + "Name" = "eks-dev-cluster-eks-mng-eks-irsa"
+        }
+      + thumbprint_list = (known after apply)
+      + url             = (known after apply)
+    }
+
+  # module.eks.aws_iam_policy.cluster_encryption[0] will be created
+  + resource "aws_iam_policy" "cluster_encryption" {
+      + arn              = (known after apply)
+      + attachment_count = (known after apply)
+      + description      = "Cluster encryption policy to allow cluster role to utilize CMK provided"
+      + id               = (known after apply)
+      + name             = (known after apply)
+      + name_prefix      = "eks-dev-cluster-eks-mng-cluster-ClusterEncryption"
+      + path             = "/"
+      + policy           = (known after apply)
+      + policy_id        = (known after apply)
+      + tags_all         = (known after apply)
+    }
+
+  # module.eks.aws_iam_role.this[0] will be created
+  + resource "aws_iam_role" "this" {
+      + arn                   = (known after apply)
+      + assume_role_policy    = jsonencode(
+            {
+              + Statement = [
+                  + {
+                      + Action    = "sts:AssumeRole"
+                      + Effect    = "Allow"
+                      + Principal = {
+                          + Service = "eks.amazonaws.com"
+                        }
+                      + Sid       = "EKSClusterAssumeRole"
+                    },
+                ]
+              + Version   = "2012-10-17"
+            }
+        )
+      + create_date           = (known after apply)
+      + force_detach_policies = true
+      + id                    = (known after apply)
+      + managed_policy_arns   = (known after apply)
+      + max_session_duration  = 3600
+      + name                  = (known after apply)
+      + name_prefix           = "eks-dev-cluster-eks-mng-cluster-"
+      + path                  = "/"
+      + tags_all              = (known after apply)
+      + unique_id             = (known after apply)
+
+      + inline_policy {
+          + name   = "eks-dev-cluster-eks-mng-cluster"
+          + policy = jsonencode(
+                {
+                  + Statement = [
+                      + {
+                          + Action   = [
+                              + "logs:CreateLogGroup",
+                            ]
+                          + Effect   = "Deny"
+                          + Resource = "*"
+                        },
+                    ]
+                  + Version   = "2012-10-17"
+                }
+            )
+        }
+    }
+
+  # module.eks.aws_iam_role_policy_attachment.cluster_encryption[0] will be created
+  + resource "aws_iam_role_policy_attachment" "cluster_encryption" {
+      + id         = (known after apply)
+      + policy_arn = (known after apply)
+   
+   + role       = (known after apply)
+    }
+
+  # module.eks.aws_iam_role_policy_attachment.this["AmazonEKSClusterPolicy"] will be created
+  + resource "aws_iam_role_policy_attachment" "this" {
+      + id         = (known after apply)
+      + policy_arn = "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy"
+      + role       = (known after apply)
+    }
+
+  # module.eks.aws_iam_role_policy_attachment.this["AmazonEKSVPCResourceController"] will be created
+  + resource "aws_iam_role_policy_attachment" "this" {
+      + id         = (known after apply)
+      + policy_arn = "arn:aws:iam::aws:policy/AmazonEKSVPCResourceController"
+      + role       = (known after apply)
+    }
+
+  # module.eks.aws_security_group.cluster[0] will be created
+  + resource "aws_security_group" "cluster" {
+      + arn                    = (known after apply)
+      + description            = "EKS cluster security group"
+      + egress                 = (known after apply)
+      + id                     = (known after apply)
+      + ingress                = (known after apply)
+      + name                   = (known after apply)
+      + name_prefix            = "eks-dev-cluster-eks-mng-cluster-"
+      + owner_id               = (known after apply)
+      + revoke_rules_on_delete = false
+      + tags                   = {
+          + "Name" = "eks-dev-cluster-eks-mng-cluster"
+        }
+      + tags_all               = {
+          + "Name" = "eks-dev-cluster-eks-mng-cluster"
+        }
+      + vpc_id                 = "vpc-0c4b1674c20159053"
+    }
+
+  # module.eks.aws_security_group.node[0] will be created
+  + resource "aws_security_group" "node" {
+      + arn                    = (known after apply)
+      + description            = "EKS node shared security group"
+      + egress                 = (known after apply)
+      + id                     = (known after apply)
+      + ingress                = (known after apply)
+      + name                   = (known after apply)
+      + name_prefix            = "eks-dev-cluster-eks-mng-node-"
+      + owner_id               = (known after apply)
+      + revoke_rules_on_delete = false
+      + tags                   = {
+          + "Name"                                          = "eks-dev-cluster-eks-mng-node"
+          + "kubernetes.io/cluster/eks-dev-cluster-eks-mng" = "owned"
+        }
+      + tags_all               = {
+          + "Name"                                          = "eks-dev-cluster-eks-mng-node"
+          + "kubernetes.io/cluster/eks-dev-cluster-eks-mng" = "owned"
+        }
+      + vpc_id                 = "vpc-0c4b1674c20159053"
+    }
+
+  # module.eks.aws_security_group_rule.cluster["ingress_nodes_443"] will be created
+  + resource "aws_security_group_rule" "cluster" {
+      + description              = "Node groups to cluster API"
+      + from_port                = 443
+      + id                       = (known after apply)
+      + protocol                 = "tcp"
+      + security_group_id        = (known after apply)
+      + security_group_rule_id   = (known after apply)
+      + self                     = false
+      + source_security_group_id = (known after apply)
+      + to_port                  = 443
+      + type                     = "ingress"
+    }
+
+  # module.eks.aws_security_group_rule.node["egress_all"] will be created
+  + resource "aws_security_group_rule" "node" {
+      + cidr_blocks              = [
+          + "0.0.0.0/0",
+        ]
+      + description              = "Allow all egress"
+      + from_port                = 0
+      + id                       = (known after apply)
+      + prefix_list_ids          = []
+      + protocol                 = "-1"
+      + security_group_id        = (known after apply)
+      + security_group_rule_id   = (known after apply)
+      + self                     = false
+      + source_security_group_id = (known after apply)
+      + to_port                  = 0
+      + type                     = "egress"
+    }
+
+  # module.eks.aws_security_group_rule.node["ingress_cluster_443"] will be created
+  + resource "aws_security_group_rule" "node" {
+      + description              = "Cluster API to node groups"
+      + from_port                = 443
+      + id                       = (known after apply)
+      + prefix_list_ids          = []
+      + protocol                 = "tcp"
+      + security_group_id        = (known after apply)
+      + security_group_rule_id   = (known after apply)
+      + self                     = false
+      + source_security_group_id = (known after apply)
+      + to_port                  = 443
+      + type                     = "ingress"
+    }
+
+  # module.eks.aws_security_group_rule.node["ingress_cluster_4443_webhook"] will be created
+  + resource "aws_security_group_rule" "node" {
+      + description              = "Cluster API to node 4443/tcp webhook"
+      + from_port                = 4443
+      + id                       = (known after apply)
+      + prefix_list_ids          = []
+      + protocol                 = "tcp"
+      + security_group_id        = (known after apply)
+      + security_group_rule_id   = (known after apply)
+      + self                     = false
+      + source_security_group_id = (known after apply)
+      + to_port                  = 4443
+      + type                     = "ingress"
+    }
+
+  # module.eks.aws_security_group_rule.node["ingress_cluster_6443_webhook"] will be created
+  + resource "aws_security_group_rule" "node" {
+      + description              = "Cluster API to node 6443/tcp webhook"
+      + from_port                = 6443
+      + id                       = (known after apply)
+      + prefix_list_ids          = []
+      + protocol                 = "tcp"
+      + security_group_id        = (known after apply)
+      + security_group_rule_id   = (known after apply)
+      + self                     = false
+      + source_security_group_id = (known after apply)
+      + to_port                  = 6443
+      + type                     = "ingress"
+    }
+
+  # module.eks.aws_security_group_rule.node["ingress_cluster_8443_webhook"] will be created
+  + resource "aws_security_group_rule" "node" {
+      + description              = "Cluster API to node 8443/tcp webhook"
+      + from_port                = 8443
+      + id                       = (known after apply)
+      + prefix_list_ids          = []
+      + protocol                 = "tcp"
+      + security_group_id        = (known after apply)
+      + security_group_rule_id   = (known after apply)
+      + self                     = false
+      + source_security_group_id = (known after apply)
+      + to_port                  = 8443
+      + type                     = "ingress"
+    }
+
+  # module.eks.aws_security_group_rule.node["ingress_cluster_9443_webhook"] will be created
+  + resource "aws_security_group_rule" "node" {
+      + description              = "Cluster API to node 9443/tcp webhook"
+      + from_port                = 9443
+      + id                       = (known after apply)
+      + prefix_list_ids          = []
+      + protocol                 = "tcp"
+      + security_group_id        = (known after apply)
+      + security_group_rule_id   = (known after apply)
+      + self                     = false
+      + source_security_group_id = (known after apply)
+      + to_port                  = 9443
+      + type                     = "ingress"
+    }
+
+  # module.eks.aws_security_group_rule.node["ingress_cluster_kubelet"] will be created
+  + resource "aws_security_group_rule" "node" {
+      + description              = "Cluster API to node kubelets"
+      + from_port                = 10250
+      + id                       = (known after apply)
+      + prefix_list_ids          = []
+      + protocol                 = "tcp"
+      + security_group_id        = (known after apply)
+      + security_group_rule_id   = (known after apply)
+      + self                     = false
+      + source_security_group_id = (known after apply)
+      + to_port                  = 10250
+      + type                     = "ingress"
+    }
+
+  # module.eks.aws_security_group_rule.node["ingress_nodes_ephemeral"] will be created
+  + resource "aws_security_group_rule" "node" {
+      + description         
+     = "Node to node ingress on ephemeral ports"
+      + from_port                = 1025
+      + id                       = (known after apply)
+      + prefix_list_ids          = []
+      + protocol                 = "tcp"
+      + security_group_id        = (known after apply)
+      + security_group_rule_id   = (known after apply)
+      + self                     = true
+      + source_security_group_id = (known after apply)
+      + to_port                  = 65535
+      + type                     = "ingress"
+    }
+
+  # module.eks.aws_security_group_rule.node["ingress_self_coredns_tcp"] will be created
+  + resource "aws_security_group_rule" "node" {
+      + description              = "Node to node CoreDNS"
+      + from_port                = 53
+      + id                       = (known after apply)
+      + prefix_list_ids          = []
+      + protocol                 = "tcp"
+      + security_group_id        = (known after apply)
+      + security_group_rule_id   = (known after apply)
+      + self                     = true
+      + source_security_group_id = (known after apply)
+      + to_port                  = 53
+      + type                     = "ingress"
+    }
+
+  # module.eks.aws_security_group_rule.node["ingress_self_coredns_udp"] will be created
+  + resource "aws_security_group_rule" "node" {
+      + description              = "Node to node CoreDNS UDP"
+      + from_port                = 53
+      + id                       = (known after apply)
+      + prefix_list_ids          = []
+      + protocol                 = "udp"
+      + security_group_id        = (known after apply)
+      + security_group_rule_id   = (known after apply)
+      + self                     = true
+      + source_security_group_id = (known after apply)
+      + to_port                  = 53
+      + type                     = "ingress"
+    }
+
+  # module.eks.time_sleep.this[0] will be created
+  + resource "time_sleep" "this" {
+      + create_duration = "30s"
+      + id              = (known after apply)
+      + triggers        = {
+          + "cluster_certificate_authority_data" = (known after apply)
+          + "cluster_endpoint"                   = (known after apply)
+          + "cluster_name"                       = "eks-dev-cluster-eks-mng"
+          + "cluster_service_cidr"               = (known after apply)
+          + "cluster_version"                    = "1.30"
+        }
+    }
+
+  # module.iam_assumable_role_karpenter_irsa.data.aws_iam_policy_document.karpenter_controller[0] will be read during apply
+  # (config refers to values not yet known)
+ <= data "aws_iam_policy_document" "karpenter_controller" {
+      + id            = (known after apply)
+      + json          = (known after apply)
+      + minified_json = (known after apply)
+
+      + statement {
+          + actions   = [
+              + "ec2:CreateFleet",
+              + "ec2:CreateLaunchTemplate",
+              + "ec2:CreateTags",
+              + "ec2:DescribeAvailabilityZones",
+              + "ec2:DescribeImages",
+              + "ec2:DescribeInstanceTypeOfferings",
+              + "ec2:DescribeInstanceTypes",
+              + "ec2:DescribeInstances",
+              + "ec2:DescribeLaunchTemplates",
+              + "ec2:DescribeSecurityGroups",
+              + "ec2:DescribeSpotPriceHistory",
+              + "ec2:DescribeSubnets",
+              + "pricing:GetProducts",
+            ]
+          + resources = [
+              + "*",
+            ]
+        }
+      + statement {
+          + actions   = [
+              + "ec2:DeleteLaunchTemplate",
+              + "ec2:TerminateInstances",
+            ]
+          + resources = [
+              + "*",
+            ]
+
+          + condition {
+              + test     = "StringEquals"
+              + values   = [
+                  + "eks-dev-cluster-eks-mng",
+                ]
+              + variable = "ec2:ResourceTag/karpenter.sh/discovery"
+            }
+        }
+      + statement {
+          + actions   = [
+              + "ec2:RunInstances",
+            ]
+          + resources = [
+              + "arn:aws:ec2:*:019819012441:launch-template/*",
+            ]
+
+          + condition {
+              + test     = "StringEquals"
+              + values   = [
+                  + "eks-dev-cluster-eks-mng",
+                ]
+              + variable = "ec2:ResourceTag/karpenter.sh/discovery"
+            }
+        }
+      + statement {
+          + actions   = [
+              + "ec2:RunInstances",
+            ]
+          + resources = [
+              + "arn:aws:ec2:*:019819012441:instance/*",
+              + "arn:aws:ec2:*:019819012441:network-interface/*",
+              + "arn:aws:ec2:*:019819012441:security-group/*",
+              + "arn:aws:ec2:*:019819012441:spot-instances-request/*",
+              + "arn:aws:ec2:*:019819012441:subnet/*",
+              + "arn:aws:ec2:*:019819012441:volume/*",
+              + "arn:aws:ec2:*::image/*",
+            ]
+        }
+      + statement {
+          + actions   = [
+              + "ssm:GetParameter",
+            ]
+          + resources = [
+              + "arn:aws:ssm:*:*:parameter/aws/service/*",
+            ]
+        }
+      + statement {
+          + actions   = [
+              + "iam:PassRole",
+            ]
+          + resources = [
+              + (known after apply),
+            ]
+        }
+      + statement {
+          + actions   = [
+              + "eks:DescribeCluster",
+            ]
+          + resources = [
+              + "arn:aws:eks:us-east-1:019819012441:cluster/eks-dev-cluster-eks-mng",
+            ]
+        }
+    }
+
+  # module.iam_assumable_role_karpenter_irsa.data.aws_iam_policy_document.this[0] will be read during apply
+  # (config refers to values not yet known)
+ <= data "aws_iam_policy_document" "this" {
+      + id            = (known after apply)
+      + json          = (known after apply)
+      + minified_json = (known after apply)
+
+      + statement {
+          + actions = [
+              + "sts:AssumeRoleWithWebIdentity",
+            ]
+          + effect  = "Allow"
+
+          + condition {
+              + test     = "StringEquals"
+              + values   = [
+                  + "sts.amazonaws.com",
+                ]
+              + variable = (known after apply)
+            }
+          + condition {
+              + test     = "StringEquals"
+              + values   = [
+                  + "system:serviceaccount:karpenter:karpenter",
+                ]
+              + variable = (known after apply)
+            }
+
+          + principals {
+              + identifiers = [
+                  + (known after apply),
+                ]
+              + type        = "Federated"
+            }
+        }
+    }
+
+  # module.iam_assumable_role_karpenter_irsa.aws_iam_policy.karpenter_controller[0] will be created
+  + resource "aws_iam_policy" "karpenter_controller" {
+      + arn              = (known after apply)
+      + attachment_count = (known after apply)
+      + description      = "Provides permissions to handle node termination events via the Node Termination Handler"
+      + id               = (known after apply)
+      + name             = (known after apply)
+      + name_prefix      = "AmazonEKS_Karpenter_Controller_Policy-"
+      + path             = "/"
+      + policy           = (known after apply)
+      + policy_id        = (known after apply)
+      + tags             = {
+          + "Env"        = "dev"
+          + "Example"    = "eks-dev-cluster-eks-mng"
+          + "GithubOrg"  = "terraform-aws-modules"
+          + "GithubRepo" = "terraform-aws-eks"
+        }
+      + tags_all         = {
+          + "Env"        = "dev"
+          + "Example"    = "eks-dev-cluster-eks-mng"
+          + "GithubOrg"  = "terraform-aws-modules"
+          + "GithubRepo" = "terraform-aws-eks"
+        }
+    }
+
+  # module.iam_assumable_role_karpenter_irsa.aws_iam_role.this[0] will be created
+  + resource "aws_iam_role" "this" {
+      + arn                   = (known after apply)
+      + assume_role_policy    = (known after apply)
+      + create_date           = (known after apply)
+      + force_detach_policies = true
+      + id                    = (known after apply)
+      + managed_policy_arns   = (known after apply)
+      + max_
+session_duration  = 3600
+      + name                  = "karpenter_controller"
+      + name_prefix           = (known after apply)
+      + path                  = "/"
+      + tags                  = {
+          + "Env"        = "dev"
+          + "Example"    = "eks-dev-cluster-eks-mng"
+          + "GithubOrg"  = "terraform-aws-modules"
+          + "GithubRepo" = "terraform-aws-eks"
+        }
+      + tags_all              = {
+          + "Env"        = "dev"
+          + "Example"    = "eks-dev-cluster-eks-mng"
+          + "GithubOrg"  = "terraform-aws-modules"
+          + "GithubRepo" = "terraform-aws-eks"
+        }
+      + unique_id             = (known after apply)
+
+      + inline_policy (known after apply)
+    }
+
+  # module.iam_assumable_role_karpenter_irsa.aws_iam_role_policy_attachment.karpenter_controller[0] will be created
+  + resource "aws_iam_role_policy_attachment" "karpenter_controller" {
+      + id         = (known after apply)
+      + policy_arn = (known after apply)
+      + role       = "karpenter_controller"
+    }
+
+  # module.key_pair.aws_key_pair.this[0] will be created
+  + resource "aws_key_pair" "this" {
+      + arn             = (known after apply)
+      + fingerprint     = (known after apply)
+      + id              = (known after apply)
+      + key_name        = (known after apply)
+      + key_name_prefix = "eks-dev-cluster-eks-mng"
+      + key_pair_id     = (known after apply)
+      + key_type        = (known after apply)
+      + public_key      = (known after apply)
+      + tags            = {
+          + "Env"        = "dev"
+          + "Example"    = "eks-dev-cluster-eks-mng"
+          + "GithubOrg"  = "terraform-aws-modules"
+          + "GithubRepo" = "terraform-aws-eks"
+        }
+      + tags_all        = {
+          + "Env"        = "dev"
+          + "Example"    = "eks-dev-cluster-eks-mng"
+          + "GithubOrg"  = "terraform-aws-modules"
+          + "GithubRepo" = "terraform-aws-eks"
+        }
+    }
+
+  # module.key_pair.tls_private_key.this[0] will be created
+  + resource "tls_private_key" "this" {
+      + algorithm                     = "RSA"
+      + ecdsa_curve                   = "P224"
+      + id                            = (known after apply)
+      + private_key_openssh           = (sensitive value)
+      + private_key_pem               = (sensitive value)
+      + private_key_pem_pkcs8         = (sensitive value)
+      + public_key_fingerprint_md5    = (known after apply)
+      + public_key_fingerprint_sha256 = (known after apply)
+      + public_key_openssh            = (known after apply)
+      + public_key_pem                = (known after apply)
+      + rsa_bits                      = 4096
+    }
+
+  # module.vpc_cni_irsa.data.aws_iam_policy_document.this[0] will be read during apply
+  # (config refers to values not yet known)
+ <= data "aws_iam_policy_document" "this" {
+      + id            = (known after apply)
+      + json          = (known after apply)
+      + minified_json = (known after apply)
+
+      + statement {
+          + actions = [
+              + "sts:AssumeRoleWithWebIdentity",
+            ]
+          + effect  = "Allow"
+
+          + condition {
+              + test     = "StringEquals"
+              + values   = [
+                  + "sts.amazonaws.com",
+                ]
+              + variable = (known after apply)
+            }
+          + condition {
+              + test     = "StringEquals"
+              + values   = [
+                  + "system:serviceaccount:kube-system:aws-node",
+                ]
+              + variable = (known after apply)
+            }
+
+          + principals {
+              + identifiers = [
+                  + (known after apply),
+                ]
+              + type        = "Federated"
+            }
+        }
+    }
+
+  # module.vpc_cni_irsa.aws_iam_policy.vpc_cni[0] will be created
+  + resource "aws_iam_policy" "vpc_cni" {
+      + arn              = (known after apply)
+      + attachment_count = (known after apply)
+      + description      = "Provides the Amazon VPC CNI Plugin (amazon-vpc-cni-k8s) the permissions it requires to modify the IPv4/IPv6 address configuration on your EKS worker nodes"
+      + id               = (known after apply)
+      + name             = (known after apply)
+      + name_prefix      = "AmazonEKS_CNI_Policy-"
+      + path             = "/"
+      + policy           = jsonencode(
+            {
+              + Statement = [
+                  + {
+                      + Action   = [
+                          + "ec2:UnassignPrivateIpAddresses",
+                          + "ec2:ModifyNetworkInterfaceAttribute",
+                          + "ec2:DetachNetworkInterface",
+                          + "ec2:DescribeTags",
+                          + "ec2:DescribeNetworkInterfaces",
+                          + "ec2:DescribeInstances",
+                          + "ec2:DescribeInstanceTypes",
+                          + "ec2:DeleteNetworkInterface",
+                          + "ec2:CreateNetworkInterface",
+                          + "ec2:AttachNetworkInterface",
+                          + "ec2:AssignPrivateIpAddresses",
+                        ]
+                      + Effect   = "Allow"
+                      + Resource = "*"
+                      + Sid      = "IPV4"
+                    },
+                  + {
+                      + Action   = "ec2:CreateTags"
+                      + Effect   = "Allow"
+                      + Resource = "arn:aws:ec2:*:*:network-interface/*"
+                      + Sid      = "CreateTags"
+                    },
+                ]
+              + Version   = "2012-10-17"
+            }
+        )
+      + policy_id        = (known after apply)
+      + tags             = {
+          + "Env"        = "dev"
+          + "Example"    = "eks-dev-cluster-eks-mng"
+          + "GithubOrg"  = "terraform-aws-modules"
+          + "GithubRepo" = "terraform-aws-eks"
+        }
+      + tags_all         = {
+          + "Env"        = "dev"
+          + "Example"    = "eks-dev-cluster-eks-mng"
+          + "GithubOrg"  = "terraform-aws-modules"
+          + "GithubRepo" = "terraform-aws-eks"
+        }
+    }
+
+  # module.vpc_cni_irsa.aws_iam_role.this[0] will be created
+  + resource "aws_iam_role" "this" {
+      + arn                   = (known after apply)
+      + assume_role_policy    = (known after apply)
+      + create_date           = (known after apply)
+      + force_detach_policies = true
+      + id                    = (known after apply)
+      + managed_policy_arns   = (known after apply)
+      + max_session_duration  = 3600
+      + name                  = (known after apply)
+      + name_prefix           = "VPC-CNI-IRSA"
+      + path                  = "/"
+      + tags                  = {
+          + "Env"        = "dev"
+          + "Example"    = "eks-dev-cluster-eks-mng"
+          + "GithubOrg"  = "terraform-aws-modules"
+          + "GithubRepo" = "terraform-aws-eks"
+        }
+      + tags_all              = {
+          + "Env"        = "dev"
+          + "Example"    = "eks-dev-cluster-eks-mng"
+          + "GithubOrg"  = "terraform-aws-modules"
+          + "GithubRepo" = "terraform-aws-eks"
+        }
+      + unique_id             = (known after apply)
+
+      + inline_policy (known after apply)
+    }
+
+  # module.vpc_cni_irsa.aws_iam_role_policy_attachment.vpc_cni[0] will be created
+  + resource "aws_iam_role_policy_attachment" "vpc_cni" {
+      + id         = (known after apply)
+      + policy_arn = (known after apply)
+      + role       = (known after apply)
+    }
+
+  # module.eks.module.eks_managed_node_group["access_entries"].aws_eks_node_group.this[0] will be created
+  + resource "aws_eks_node_group" "this" {
+      + ami_type               = "AL2_x86_64"
+      + arn                    = (known after apply)
+      + capacity_type          = (known after apply)
+      + cluster_name           = "eks-dev-cluster-eks-mng"
+      + disk_size              = (known after apply)
+      + id                     = (known after apply)
+      + instance_types         = [
+          + "t3.medium",
+        ]
+      + node_group_name        = (known after apply)
+      + node_group_name_prefix = "access_entries-"
+      + node_role_arn
+          = (known after apply)
+      + release_version        = (known after apply)
+      + resources              = (known after apply)
+      + status                 = (known after apply)
+      + subnet_ids             = [
+          + "subnet-02210ae8f43f2a2ae",
+          + "subnet-03bf999b681376a8a",
+        ]
+      + tags                   = {
+          + "Name" = "access_entries"
+        }
+      + tags_all               = {
+          + "Name" = "access_entries"
+        }
+      + version                = "1.30"
+
+      + launch_template {
+          + id      = (known after apply)
+          + name    = (known after apply)
+          + version = (known after apply)
+        }
+
+      + scaling_config {
+          + desired_size = 1
+          + max_size     = 3
+          + min_size     = 1
+        }
+
+      + timeouts {}
+
+      + update_config {
+          + max_unavailable_percentage = 33
+        }
+    }
+
+  # module.eks.module.eks_managed_node_group["access_entries"].aws_iam_role.this[0] will be created
+  + resource "aws_iam_role" "this" {
+      + arn                   = (known after apply)
+      + assume_role_policy    = jsonencode(
+            {
+              + Statement = [
+                  + {
+                      + Action    = "sts:AssumeRole"
+                      + Effect    = "Allow"
+                      + Principal = {
+                          + Service = "ec2.amazonaws.com"
+                        }
+                      + Sid       = "EKSNodeAssumeRole"
+                    },
+                ]
+              + Version   = "2012-10-17"
+            }
+        )
+      + create_date           = (known after apply)
+      + description           = "EKS managed node group IAM role"
+      + force_detach_policies = true
+      + id                    = (known after apply)
+      + managed_policy_arns   = (known after apply)
+      + max_session_duration  = 3600
+      + name                  = (known after apply)
+      + name_prefix           = "access_entries-eks-node-group-"
+      + path                  = "/"
+      + tags_all              = (known after apply)
+      + unique_id             = (known after apply)
+
+      + inline_policy (known after apply)
+    }
+
+  # module.eks.module.eks_managed_node_group["access_entries"].aws_iam_role_policy_attachment.this["AmazonEC2ContainerRegistryReadOnly"] will be created
+  + resource "aws_iam_role_policy_attachment" "this" {
+      + id         = (known after apply)
+      + policy_arn = "arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly"
+      + role       = (known after apply)
+    }
+
+  # module.eks.module.eks_managed_node_group["access_entries"].aws_iam_role_policy_attachment.this["AmazonEKSWorkerNodePolicy"] will be created
+  + resource "aws_iam_role_policy_attachment" "this" {
+      + id         = (known after apply)
+      + policy_arn = "arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy"
+      + role       = (known after apply)
+    }
+
+  # module.eks.module.eks_managed_node_group["access_entries"].aws_iam_role_policy_attachment.this["AmazonEKS_CNI_Policy"] will be created
+  + resource "aws_iam_role_policy_attachment" "this" {
+      + id         = (known after apply)
+      + policy_arn = "arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy"
+      + role       = (known after apply)
+    }
+
+  # module.eks.module.eks_managed_node_group["access_entries"].aws_launch_template.this[0] will be created
+  + resource "aws_launch_template" "this" {
+      + arn                    = (known after apply)
+      + default_version        = (known after apply)
+      + description            = "Custom launch template for access_entries EKS managed node group"
+      + id                     = (known after apply)
+      + latest_version         = (known after apply)
+      + name                   = (known after apply)
+      + name_prefix            = "access_entries-"
+      + tags_all               = (known after apply)
+      + update_default_version = true
+      + vpc_security_group_ids = (known after apply)
+        # (2 unchanged attributes hidden)
+
+      + metadata_options {
+          + http_endpoint               = "enabled"
+          + http_protocol_ipv6          = (known after apply)
+          + http_put_response_hop_limit = 2
+          + http_tokens                 = "required"
+          + instance_metadata_tags      = (known after apply)
+        }
+
+      + monitoring {
+          + enabled = true
+        }
+
+      + tag_specifications {
+          + resource_type = "instance"
+          + tags          = {
+              + "Name" = "access_entries"
+            }
+        }
+      + tag_specifications {
+          + resource_type = "network-interface"
+          + tags          = {
+              + "Name" = "access_entries"
+            }
+        }
+      + tag_specifications {
+          + resource_type = "volume"
+          + tags          = {
+              + "Name" = "access_entries"
+            }
+        }
+    }
+
+  # module.eks.module.eks_managed_node_group["complete"].aws_eks_node_group.this[0] will be created
+  + resource "aws_eks_node_group" "this" {
+      + ami_type               = (known after apply)
+      + arn                    = (known after apply)
+      + capacity_type          = "ON_DEMAND"
+      + cluster_name           = "eks-dev-cluster-eks-mng"
+      + disk_size              = (known after apply)
+      + force_update_version   = true
+      + id                     = (known after apply)
+      + instance_types         = [
+          + "t3.medium",
+        ]
+      + labels                 = {
+          + "GithubOrg"  = "terraform-aws-modules"
+          + "GithubRepo" = "terraform-aws-eks"
+        }
+      + node_group_name        = (known after apply)
+      + node_group_name_prefix = "eks-managed-ng-"
+      + node_role_arn          = (known after apply)
+      + release_version        = (known after apply)
+      + resources              = (known after apply)
+      + status                 = (known after apply)
+      + subnet_ids             = [
+          + "subnet-02210ae8f43f2a2ae",
+          + "subnet-03bf999b681376a8a",
+        ]
+      + tags                   = {
+          + "ExtraTag"           = "EKS managed node group for eks-dev-cluster-eks-mng"
+          + "Name"               = "eks-managed-ng"
+          + "eks/cluster-name"   = "eks-dev-cluster-eks-mng"
+          + "eks/nodegroup-name" = "eks-managed-ng"
+          + "eks/nodegroup-type" = "managed"
+        }
+      + tags_all               = {
+          + "ExtraTag"           = "EKS managed node group for eks-dev-cluster-eks-mng"
+          + "Name"               = "eks-managed-ng"
+          + "eks/cluster-name"   = "eks-dev-cluster-eks-mng"
+          + "eks/nodegroup-name" = "eks-managed-ng"
+          + "eks/nodegroup-type" = "managed"
+        }
+      + version                = (known after apply)
+
+      + launch_template {
+          + id      = (known after apply)
+          + name    = (known after apply)
+          + version = (known after apply)
+        }
+
+      + scaling_config {
+          + desired_size = 1
+          + max_size     = 3
+          + min_size     = 0
+        }
+
+      + taint {
+          + effect = "NO_SCHEDULE"
+          + key    = "dedicated"
+          + value  = "gpuGroup"
+        }
+
+      + timeouts {}
+
+      + update_config {
+          + max_unavailable_percentage = 33
+        }
+    }
+
+  # module.eks.module.eks_managed_node_group["complete"].aws_iam_role.this[0] will be created
+  + resource "aws_iam_role" "this" {
+      + arn                   = (known after apply)
+      + assume_role_policy    = jsonencode(
+            {
+              + Statement = [
+                  + {
+                      + Action    = "sts:AssumeRole"
+                      + Effect    = "Allow"
+                      + Principal = {
+                          + Service = "ec2.amazonaws.com"
+                        }
+                      + Sid       = "EKSNodeAssumeRole"
+                    },
+                ]
+              + Version   = "2012-10-17"
+            }
+        )
+      + create_date           = (known after apply)
+      + description           = "EKS managed node group IAM role for eks-dev-cluster-eks-mng"
+      + force_detach_policies = true
+      
++ id                    = (known after apply)
+      + managed_policy_arns   = (known after apply)
+      + max_session_duration  = 3600
+      + name                  = "eks-managed-ng-role"
+      + name_prefix           = (known after apply)
+      + path                  = "/"
+      + tags                  = {
+          + "ExtraTag"           = "EKS managed node group for eks-dev-cluster-eks-mng"
+          + "Name"               = "eks-managed-ng"
+          + "Purpose"            = "Protector of the kubelet"
+          + "eks/cluster-name"   = "eks-dev-cluster-eks-mng"
+          + "eks/nodegroup-name" = "eks-managed-ng"
+          + "eks/nodegroup-type" = "managed"
+        }
+      + tags_all              = {
+          + "ExtraTag"           = "EKS managed node group for eks-dev-cluster-eks-mng"
+          + "Name"               = "eks-managed-ng"
+          + "Purpose"            = "Protector of the kubelet"
+          + "eks/cluster-name"   = "eks-dev-cluster-eks-mng"
+          + "eks/nodegroup-name" = "eks-managed-ng"
+          + "eks/nodegroup-type" = "managed"
+        }
+      + unique_id             = (known after apply)
+
+      + inline_policy (known after apply)
+    }
+
+  # module.eks.module.eks_managed_node_group["complete"].aws_iam_role_policy.this[0] will be created
+  + resource "aws_iam_role_policy" "this" {
+      + id          = (known after apply)
+      + name        = "eks-managed-ng-role"
+      + name_prefix = (known after apply)
+      + policy      = jsonencode(
+            {
+              + Statement = [
+                  + {
+                      + Action   = [
+                          + "ecr:CreateRepository",
+                          + "ecr:BatchImportUpstreamImage",
+                        ]
+                      + Effect   = "Allow"
+                      + Resource = "*"
+                      + Sid      = "ECRPullThroughCache"
+                    },
+                ]
+              + Version   = "2012-10-17"
+            }
+        )
+      + role        = (known after apply)
+    }
+
+  # module.eks.module.eks_managed_node_group["complete"].aws_iam_role_policy_attachment.additional["AmazonEC2ContainerRegistryReadOnly"] will be created
+  + resource "aws_iam_role_policy_attachment" "additional" {
+      + id         = (known after apply)
+      + policy_arn = "arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly"
+      + role       = "eks-managed-ng-role"
+    }
+
+  # module.eks.module.eks_managed_node_group["complete"].aws_iam_role_policy_attachment.additional["additional"] will be created
+  + resource "aws_iam_role_policy_attachment" "additional" {
+      + id         = (known after apply)
+      + policy_arn = (known after apply)
+      + role       = "eks-managed-ng-role"
+    }
+
+  # module.eks.module.eks_managed_node_group["complete"].aws_iam_role_policy_attachment.this["AmazonEC2ContainerRegistryReadOnly"] will be created
+  + resource "aws_iam_role_policy_attachment" "this" {
+      + id         = (known after apply)
+      + policy_arn = "arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly"
+      + role       = "eks-managed-ng-role"
+    }
+
+  # module.eks.module.eks_managed_node_group["complete"].aws_iam_role_policy_attachment.this["AmazonEKSWorkerNodePolicy"] will be created
+  + resource "aws_iam_role_policy_attachment" "this" {
+      + id         = (known after apply)
+      + policy_arn = "arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy"
+      + role       = "eks-managed-ng-role"
+    }
+
+  # module.eks.module.eks_managed_node_group["complete"].aws_iam_role_policy_attachment.this["AmazonEKS_CNI_Policy"] will be created
+  + resource "aws_iam_role_policy_attachment" "this" {
+      + id         = (known after apply)
+      + policy_arn = "arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy"
+      + role       = "eks-managed-ng-role"
+    }
+
+  # module.eks.module.eks_managed_node_group["complete"].aws_launch_template.this[0] will be created
+  + resource "aws_launch_template" "this" {
+      + arn                     = (known after apply)
+      + default_version         = (known after apply)
+      + description             = "Custom launch template for eks-managed-ng EKS managed node group"
+      + disable_api_termination = false
+      + ebs_optimized           = "true"
+      + id                      = (known after apply)
+      + image_id                = "ami-0f017efb82ee7b952"
+      + latest_version          = (known after apply)
+      + name                    = (known after apply)
+      + name_prefix             = "complete-"
+      + tags                    = {
+          + "ExtraTag"                                          = "EKS managed node group for eks-dev-cluster-eks-mng"
+          + "Name"                                              = "eks-managed-ng"
+          + "eks/cluster-name"                                  = "eks-dev-cluster-eks-mng"
+          + "eks/nodegroup-name"                                = "eks-managed-ng"
+          + "eks/nodegroup-type"                                = "managed"
+          + "k8s.io/cluster-autoscaler/eks-dev-cluster-eks-mng" = "owned"
+          + "k8s.io/cluster-autoscaler/enabled"                 = "true"
+        }
+      + tags_all                = {
+          + "ExtraTag"                                          = "EKS managed node group for eks-dev-cluster-eks-mng"
+          + "Name"                                              = "eks-managed-ng"
+          + "eks/cluster-name"                                  = "eks-dev-cluster-eks-mng"
+          + "eks/nodegroup-name"                                = "eks-managed-ng"
+          + "eks/nodegroup-type"                                = "managed"
+          + "k8s.io/cluster-autoscaler/eks-dev-cluster-eks-mng" = "owned"
+          + "k8s.io/cluster-autoscaler/enabled"                 = "true"
+        }
+      + update_default_version  = true
+      + user_data               = (known after apply)
+      + vpc_security_group_ids  = (known after apply)
+
+      + block_device_mappings (known after apply)
+
+      + metadata_options {
+          + http_endpoint               = "enabled"
+          + http_protocol_ipv6          = (known after apply)
+          + http_put_response_hop_limit = 2
+          + http_tokens                 = "required"
+          + instance_metadata_tags      = "disabled"
+        }
+
+      + monitoring {
+          + enabled = true
+        }
+
+      + tag_specifications {
+          + resource_type = "instance"
+          + tags          = {
+              + "ExtraTag"                                          = "EKS managed node group for eks-dev-cluster-eks-mng"
+              + "Name"                                              = "eks-managed-ng"
+              + "eks/cluster-name"                                  = "eks-dev-cluster-eks-mng"
+              + "eks/nodegroup-name"                                = "eks-managed-ng"
+              + "eks/nodegroup-type"                                = "managed"
+              + "k8s.io/cluster-autoscaler/eks-dev-cluster-eks-mng" = "owned"
+              + "k8s.io/cluster-autoscaler/enabled"                 = "true"
+            }
+        }
+      + tag_specifications {
+          + resource_type = "network-interface"
+          + tags          = {
+              + "ExtraTag"                                          = "EKS managed node group for eks-dev-cluster-eks-mng"
+              + "Name"                                              = "eks-managed-ng"
+              + "eks/cluster-name"                                  = "eks-dev-cluster-eks-mng"
+              + "eks/nodegroup-name"                                = "eks-managed-ng"
+              + "eks/nodegroup-type"                                = "managed"
+              + "k8s.io/cluster-autoscaler/eks-dev-cluster-eks-mng" = "owned"
+              + "k8s.io/cluster-autoscaler/enabled"                 = "true"
+            }
+        }
+      + tag_specifications {
+          + resource_type = "volume"
+          + tags          = {
+              + "ExtraTag"                                          = "EKS managed node group for eks-dev-cluster-eks-mng"
+              + "Name"                                              = "eks-managed-ng"
+       
+       + "eks/cluster-name"                                  = "eks-dev-cluster-eks-mng"
+              + "eks/nodegroup-name"                                = "eks-managed-ng"
+              + "eks/nodegroup-type"                                = "managed"
+              + "k8s.io/cluster-autoscaler/eks-dev-cluster-eks-mng" = "owned"
+              + "k8s.io/cluster-autoscaler/enabled"                 = "true"
+            }
+        }
+    }
+
+  # module.eks.module.eks_managed_node_group["tags"].aws_eks_node_group.this[0] will be created
+  + resource "aws_eks_node_group" "this" {
+      + ami_type               = "AL2_x86_64"
+      + arn                    = (known after apply)
+      + capacity_type          = (known after apply)
+      + cluster_name           = "eks-dev-cluster-eks-mng"
+      + disk_size              = (known after apply)
+      + id                     = (known after apply)
+      + instance_types         = [
+          + "t3.medium",
+        ]
+      + node_group_name        = (known after apply)
+      + node_group_name_prefix = "tags-"
+      + node_role_arn          = (known after apply)
+      + release_version        = (known after apply)
+      + resources              = (known after apply)
+      + status                 = (known after apply)
+      + subnet_ids             = [
+          + "subnet-02210ae8f43f2a2ae",
+          + "subnet-03bf999b681376a8a",
+        ]
+      + tags                   = {
+          + "Name" = "tags"
+        }
+      + tags_all               = {
+          + "Name" = "tags"
+        }
+      + version                = "1.30"
+
+      + launch_template {
+          + id      = (known after apply)
+          + name    = (known after apply)
+          + version = (known after apply)
+        }
+
+      + scaling_config {
+          + desired_size = 1
+          + max_size     = 3
+          + min_size     = 1
+        }
+
+      + timeouts {}
+
+      + update_config {
+          + max_unavailable_percentage = 33
+        }
+    }
+
+  # module.eks.module.eks_managed_node_group["tags"].aws_iam_role.this[0] will be created
+  + resource "aws_iam_role" "this" {
+      + arn                   = (known after apply)
+      + assume_role_policy    = jsonencode(
+            {
+              + Statement = [
+                  + {
+                      + Action    = "sts:AssumeRole"
+                      + Effect    = "Allow"
+                      + Principal = {
+                          + Service = "ec2.amazonaws.com"
+                        }
+                      + Sid       = "EKSNodeAssumeRole"
+                    },
+                ]
+              + Version   = "2012-10-17"
+            }
+        )
+      + create_date           = (known after apply)
+      + description           = "EKS managed node group IAM role"
+      + force_detach_policies = true
+      + id                    = (known after apply)
+      + managed_policy_arns   = (known after apply)
+      + max_session_duration  = 3600
+      + name                  = (known after apply)
+      + name_prefix           = "tags-eks-node-group-"
+      + path                  = "/"
+      + tags_all              = (known after apply)
+      + unique_id             = (known after apply)
+
+      + inline_policy (known after apply)
+    }
+
+  # module.eks.module.eks_managed_node_group["tags"].aws_iam_role_policy_attachment.this["AmazonEC2ContainerRegistryReadOnly"] will be created
+  + resource "aws_iam_role_policy_attachment" "this" {
+      + id         = (known after apply)
+      + policy_arn = "arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly"
+      + role       = (known after apply)
+    }
+
+  # module.eks.module.eks_managed_node_group["tags"].aws_iam_role_policy_attachment.this["AmazonEKSWorkerNodePolicy"] will be created
+  + resource "aws_iam_role_policy_attachment" "this" {
+      + id         = (known after apply)
+      + policy_arn = "arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy"
+      + role       = (known after apply)
+    }
+
+  # module.eks.module.eks_managed_node_group["tags"].aws_iam_role_policy_attachment.this["AmazonEKS_CNI_Policy"] will be created
+  + resource "aws_iam_role_policy_attachment" "this" {
+      + id         = (known after apply)
+      + policy_arn = "arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy"
+      + role       = (known after apply)
+    }
+
+  # module.eks.module.eks_managed_node_group["tags"].aws_launch_template.this[0] will be created
+  + resource "aws_launch_template" "this" {
+      + arn                    = (known after apply)
+      + default_version        = (known after apply)
+      + description            = "Custom launch template for tags EKS managed node group"
+      + id                     = (known after apply)
+      + latest_version         = (known after apply)
+      + name                   = (known after apply)
+      + name_prefix            = "tags-"
+      + tags_all               = (known after apply)
+      + update_default_version = true
+      + vpc_security_group_ids = (known after apply)
+        # (2 unchanged attributes hidden)
+
+      + metadata_options {
+          + http_endpoint               = "enabled"
+          + http_protocol_ipv6          = (known after apply)
+          + http_put_response_hop_limit = 2
+          + http_tokens                 = "required"
+          + instance_metadata_tags      = (known after apply)
+        }
+
+      + monitoring {
+          + enabled = true
+        }
+
+      + tag_specifications {
+          + resource_type = "instance"
+          + tags          = {
+              + "Name" = "tags"
+            }
+        }
+      + tag_specifications {
+          + resource_type = "network-interface"
+          + tags          = {
+              + "Name" = "tags"
+            }
+        }
+      + tag_specifications {
+          + resource_type = "volume"
+          + tags          = {
+              + "Name" = "tags"
+            }
+        }
+    }
+
+  # module.eks.module.kms.data.aws_iam_policy_document.this[0] will be read during apply
+  # (config refers to values not yet known)
+ <= data "aws_iam_policy_document" "this" {
+      + id                        = (known after apply)
+      + json                      = (known after apply)
+      + minified_json             = (known after apply)
+      + override_policy_documents = []
+      + source_policy_documents   = []
+
+      + statement {
+          + actions   = [
+              + "kms:*",
+            ]
+          + resources = [
+              + "*",
+            ]
+          + sid       = "Default"
+
+          + principals {
+              + identifiers = [
+                  + "arn:aws:iam::019819012441:root",
+                ]
+              + type        = "AWS"
+            }
+        }
+      + statement {
+          + actions   = [
+              + "kms:CancelKeyDeletion",
+              + "kms:Create*",
+              + "kms:Delete*",
+              + "kms:Describe*",
+              + "kms:Disable*",
+              + "kms:Enable*",
+              + "kms:Get*",
+              + "kms:ImportKeyMaterial",
+              + "kms:List*",
+              + "kms:Put*",
+              + "kms:ReplicateKey",
+              + "kms:Revoke*",
+              + "kms:ScheduleKeyDeletion",
+              + "kms:TagResource",
+              + "kms:UntagResource",
+              + "kms:Update*",
+            ]
+          + resources = [
+              + "*",
+            ]
+          + sid       = "KeyAdministration"
+
+          + principals {
+              + identifiers = [
+                  + "arn:aws:iam::019819012441:user/Whiz_User_85401.25377679",
+                ]
+              + type        = "AWS"
+            }
+        }
+      + statement {
+          + actions   = [
+              + "kms:Decrypt",
+              + "kms:DescribeKey",
+              + "kms:Encrypt",
+              + "kms:GenerateDataKey*",
+              + "kms:ReEncrypt*",
+            ]
+          + resources = [
+              + "*",
+            ]
+          + sid       = "KeyUsage"
+
+          + principals {
+              + identifiers = [
+                  + (known after apply),
+                ]
+              + type        = "AWS"
+            }
+        }
+    }
+
+  # module.eks.module.kms.aws_kms_alias.this["cluster"] will be created
+  + resource "aws_kms_ali
+as" "this" {
+      + arn            = (known after apply)
+      + id             = (known after apply)
+      + name           = "alias/eks/eks-dev-cluster-eks-mng"
+      + name_prefix    = (known after apply)
+      + target_key_arn = (known after apply)
+      + target_key_id  = (known after apply)
+    }
+
+  # module.eks.module.kms.aws_kms_key.this[0] will be created
+  + resource "aws_kms_key" "this" {
+      + arn                                = (known after apply)
+      + bypass_policy_lockout_safety_check = false
+      + customer_master_key_spec           = "SYMMETRIC_DEFAULT"
+      + description                        = "eks-dev-cluster-eks-mng cluster encryption key"
+      + enable_key_rotation                = true
+      + id                                 = (known after apply)
+      + is_enabled                         = true
+      + key_id                             = (known after apply)
+      + key_usage                          = "ENCRYPT_DECRYPT"
+      + multi_region                       = false
+      + policy                             = (known after apply)
+      + rotation_period_in_days            = (known after apply)
+      + tags                               = {
+          + "terraform-aws-modules" = "eks"
+        }
+      + tags_all                           = {
+          + "terraform-aws-modules" = "eks"
+        }
+    }
+
+  # module.eks.module.eks_managed_node_group["access_entries"].module.user_data.null_resource.validate_cluster_service_cidr will be created
+  + resource "null_resource" "validate_cluster_service_cidr" {
+      + id = (known after apply)
+    }
+
+  # module.eks.module.eks_managed_node_group["complete"].module.user_data.null_resource.validate_cluster_service_cidr will be created
+  + resource "null_resource" "validate_cluster_service_cidr" {
+      + id = (known after apply)
+    }
+
+  # module.eks.module.eks_managed_node_group["tags"].module.user_data.null_resource.validate_cluster_service_cidr will be created
+  + resource "null_resource" "validate_cluster_service_cidr" {
+      + id = (known after apply)
+    }
+
+Plan: 71 to add, 0 to change, 0 to destroy.

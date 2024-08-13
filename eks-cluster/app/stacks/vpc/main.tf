@@ -47,15 +47,16 @@ module "vpc" {
 # create_flow_log_cloudwatch_iam_role  = true
 # create_flow_log_cloudwatch_log_group = true
 
-  public_subnet_tags = {
+  public_subnet_tags = merge(local.common_tags, {
       "kubernetes.io/cluster/${var.cluster_name}" = "shared"
       "kubernetes.io/role/elb" = "1"
-    }
+    })
 
-  private_subnet_tags = {
+  private_subnet_tags = merge(local.common_tags, {
       "kubernetes.io/cluster/${var.cluster_name}" = "shared"
       "kubernetes.io/role/internal-elb" = "1"
-    }
+      "karpenter.sh/discovery" = var.cluster_name
+    })
   
 
   tags = merge(
