@@ -1,3 +1,73 @@
+module.iam_assumable_role_karpenter_irsa.data.aws_caller_identity.current: Reading...
+module.vpc_cni_irsa.data.aws_partition.current: Reading...
+module.aws_load_balancer_controller_irsa_role.data.aws_caller_identity.current: Reading...
+data.aws_availability_zones.available: Reading...
+data.aws_caller_identity.current: Reading...
+module.iam_assumable_role_karpenter_irsa.data.aws_partition.current: Reading...
+module.karpenter.data.aws_partition.current: Reading...
+module.eks.data.aws_caller_identity.current: Reading...
+module.karpenter.data.aws_partition.current: Read complete after 0s [id=aws]
+module.vpc_cni_irsa.data.aws_partition.current: Read complete after 0s [id=aws]
+module.iam_assumable_role_karpenter_irsa.data.aws_partition.current: Read complete after 0s [id=aws]
+module.ebs_kms_key.data.aws_partition.current[0]: Reading...
+module.iam_assumable_role_karpenter_irsa.data.aws_region.current: Reading...
+module.ebs_kms_key.data.aws_partition.current[0]: Read complete after 0s [id=aws]
+module.iam_assumable_role_karpenter_irsa.data.aws_region.current: Read complete after 0s [id=us-east-1]
+module.karpenter.data.aws_iam_policy_document.controller_assume_role[0]: Reading...
+data.aws_ami.eks_default: Reading...
+module.karpenter.data.aws_iam_policy_document.controller_assume_role[0]: Read complete after 0s [id=819195744]
+module.aws_load_balancer_controller_irsa_role.data.aws_partition.current: Reading...
+module.eks.data.aws_iam_policy_document.assume_role_policy[0]: Reading...
+module.eks.module.kms.data.aws_caller_identity.current[0]: Reading...
+module.aws_load_balancer_controller_irsa_role.data.aws_partition.current: Read complete after 0s [id=aws]
+module.eks.data.aws_partition.current: Reading...
+module.vpc_cni_irsa.data.aws_caller_identity.current: Reading...
+module.eks.data.aws_iam_policy_document.assume_role_policy[0]: Read complete after 0s [id=2764486067]
+module.eks.data.aws_partition.current: Read complete after 0s [id=aws]
+module.karpenter.data.aws_caller_identity.current: Reading...
+module.ebs_kms_key.data.aws_caller_identity.current[0]: Reading...
+module.eks.data.aws_caller_identity.current: Read complete after 0s [id=933714606193]
+module.eks.module.kms.data.aws_partition.current[0]: Reading...
+module.eks.module.kms.data.aws_partition.current[0]: Read complete after 0s [id=aws]
+module.karpenter.data.aws_iam_policy_document.node_assume_role[0]: Reading...
+module.karpenter.data.aws_iam_policy_document.node_assume_role[0]: Read complete after 0s [id=2560088296]
+module.karpenter.data.aws_region.current: Reading...
+module.karpenter.data.aws_region.current: Read complete after 0s [id=us-east-1]
+module.eks.data.aws_iam_session_context.current: Reading...
+module.eks.data.aws_iam_session_context.current: Read complete after 0s [id=arn:aws:iam::933714606193:user/Whiz_User_85401.17157593]
+module.vpc_cni_irsa.data.aws_iam_policy_document.vpc_cni[0]: Reading...
+module.vpc_cni_irsa.data.aws_iam_policy_document.vpc_cni[0]: Read complete after 0s [id=4274657427]
+module.aws_load_balancer_controller_irsa_role.data.aws_iam_policy_document.load_balancer_controller[0]: Reading...
+module.aws_load_balancer_controller_irsa_role.data.aws_iam_policy_document.load_balancer_controller[0]: Read complete after 0s [id=3165004190]
+module.iam_assumable_role_karpenter_irsa.data.aws_caller_identity.current: Read complete after 0s [id=933714606193]
+module.aws_load_balancer_controller_irsa_role.data.aws_caller_identity.current: Read complete after 1s [id=933714606193]
+data.aws_caller_identity.current: Read complete after 1s [id=933714606193]
+module.karpenter.data.aws_caller_identity.current: Read complete after 1s [id=933714606193]
+module.eks.module.kms.data.aws_caller_identity.current[0]: Read complete after 1s [id=933714606193]
+module.vpc_cni_irsa.data.aws_caller_identity.current: Read complete after 1s [id=933714606193]
+module.ebs_kms_key.data.aws_caller_identity.current[0]: Read complete after 1s [id=933714606193]
+data.aws_availability_zones.available: Read complete after 1s [id=us-east-1]
+data.aws_ami.eks_default: Read complete after 1s [id=ami-0f017efb82ee7b952]
+module.eks.module.eks_managed_node_group["complete"].data.aws_partition.current: Reading...
+module.eks.module.eks_managed_node_group["access_entries"].data.aws_caller_identity.current: Reading...
+module.eks.module.eks_managed_node_group["tags"].data.aws_partition.current: Reading...
+module.eks.module.eks_managed_node_group["access_entries"].data.aws_partition.current: Reading...
+module.eks.module.eks_managed_node_group["tags"].data.aws_partition.current: Read complete after 0s [id=aws]
+module.eks.module.eks_managed_node_group["complete"].data.aws_partition.current: Read complete after 0s [id=aws]
+module.eks.module.eks_managed_node_group["complete"].data.aws_caller_identity.current: Reading...
+module.eks.module.eks_managed_node_group["tags"].data.aws_caller_identity.current: Reading...
+module.eks.module.eks_managed_node_group["access_entries"].data.aws_partition.current: Read complete after 0s [id=aws]
+module.eks.module.eks_managed_node_group["complete"].data.aws_iam_policy_document.role[0]: Reading...
+module.eks.module.eks_managed_node_group["complete"].data.aws_iam_policy_document.role[0]: Read complete after 0s [id=867904601]
+module.eks.module.eks_managed_node_group["complete"].data.aws_iam_policy_document.assume_role_policy[0]: Reading...
+module.eks.module.eks_managed_node_group["access_entries"].data.aws_iam_policy_document.assume_role_policy[0]: Reading...
+module.eks.module.eks_managed_node_group["tags"].data.aws_iam_policy_document.assume_role_policy[0]: Reading...
+module.eks.module.eks_managed_node_group["complete"].data.aws_iam_policy_document.assume_role_policy[0]: Read complete after 0s [id=2560088296]
+module.eks.module.eks_managed_node_group["tags"].data.aws_iam_policy_document.assume_role_policy[0]: Read complete after 0s [id=2560088296]
+module.eks.module.eks_managed_node_group["access_entries"].data.aws_iam_policy_document.assume_role_policy[0]: Read complete after 0s [id=2560088296]
+module.eks.module.eks_managed_node_group["access_entries"].data.aws_caller_identity.current: Read complete after 0s [id=933714606193]
+module.eks.module.eks_managed_node_group["complete"].data.aws_caller_identity.current: Read complete after 0s [id=933714606193]
+module.eks.module.eks_managed_node_group["tags"].data.aws_caller_identity.current: Read complete after 0s [id=933714606193]
 
 Terraform used the selected providers to generate the following execution
 plan. Resource actions are indicated with the following symbols:
@@ -5,6 +75,7 @@ plan. Resource actions are indicated with the following symbols:
  <= read (data resources)
 
 Terraform will perform the following actions:
+
   # aws_iam_instance_profile.karpenter will be created
   + resource "aws_iam_instance_profile" "karpenter" {
       + arn         = (known after apply)
@@ -17,6 +88,7 @@ Terraform will perform the following actions:
       + tags_all    = (known after apply)
       + unique_id   = (known after apply)
     }
+
   # aws_iam_policy.node_additional will be created
   + resource "aws_iam_policy" "node_additional" {
       + arn              = (known after apply)
@@ -54,6 +126,7 @@ Terraform will perform the following actions:
           + "GithubRepo" = "terraform-aws-eks"
         }
     }
+
   # aws_iam_role.this["multiple"] will be created
   + resource "aws_iam_role" "this" {
       + arn                   = (known after apply)
@@ -96,6 +169,7 @@ Terraform will perform the following actions:
 
       + inline_policy (known after apply)
     }
+
   # aws_iam_role.this["single"] will be created
   + resource "aws_iam_role" "this" {
       + arn                   = (known after apply)
@@ -138,6 +212,7 @@ Terraform will perform the following actions:
 
       + inline_policy (known after apply)
     }
+
   # aws_kms_key.eks will be created
   + resource "aws_kms_key" "eks" {
       + arn                                = (known after apply)
@@ -166,6 +241,7 @@ Terraform will perform the following actions:
           + "GithubRepo" = "terraform-aws-eks"
         }
     }
+
   # aws_security_group.additional will be created
   + resource "aws_security_group" "additional" {
       + arn                    = (known after apply)
@@ -203,8 +279,9 @@ Terraform will perform the following actions:
           + "GithubOrg"  = "terraform-aws-modules"
           + "GithubRepo" = "terraform-aws-eks"
         }
-      + vpc_id                 = "vpc-0c4b1674c20159053"
+      + vpc_id                 = "vpc-06a31476a83ace8ee"
     }
+
   # aws_security_group.remote_access will be created
   + resource "aws_security_group" "remote_access" {
       + arn                    = (known after apply)
@@ -260,7 +337,63 @@ Terraform will perform the following actions:
           + "GithubRepo" = "terraform-aws-eks"
           + "Name"       = "eks-dev-cluster-eks-mng-remote"
         }
-      + vpc_id                 = "vpc-0c4b1674c20159053"
+      + vpc_id                 = "vpc-06a31476a83ace8ee"
+    }
+
+  # helm_release.aws_load_balancer_controller will be created
+  + resource "helm_r
+elease" "aws_load_balancer_controller" {
+      + atomic                     = false
+      + chart                      = "aws-load-balancer-controller"
+      + cleanup_on_fail            = false
+      + create_namespace           = false
+      + dependency_update          = false
+      + disable_crd_hooks          = false
+      + disable_openapi_validation = false
+      + disable_webhooks           = false
+      + force_update               = false
+      + id                         = (known after apply)
+      + lint                       = false
+      + manifest                   = (known after apply)
+      + max_history                = 0
+      + metadata                   = (known after apply)
+      + name                       = "aws-load-balancer-controller"
+      + namespace                  = "kube-system"
+      + pass_credentials           = false
+      + recreate_pods              = false
+      + render_subchart_notes      = true
+      + replace                    = false
+      + repository                 = "https://aws.github.io/eks-charts"
+      + reset_values               = false
+      + reuse_values               = false
+      + skip_crds                  = false
+      + status                     = "deployed"
+      + timeout                    = 300
+      + verify                     = false
+      + version                    = "1.8.2"
+      + wait                       = true
+      + wait_for_jobs              = false
+
+      + set {
+          + name  = "clusterName"
+          + value = (known after apply)
+            # (1 unchanged attribute hidden)
+        }
+      + set {
+          + name  = "replicaCount"
+          + value = "1"
+            # (1 unchanged attribute hidden)
+        }
+      + set {
+          + name  = "serviceAccount.annotations.eks\\.amazonaws\\.com/role-arn"
+          + value = (known after apply)
+            # (1 unchanged attribute hidden)
+        }
+      + set {
+          + name  = "serviceAccount.name"
+          + value = "aws-load-balancer-controller"
+            # (1 unchanged attribute hidden)
+        }
     }
 
   # helm_release.karpenter will be created
@@ -280,7 +413,7 @@ Terraform will perform the following actions:
       + max_history                = 0
       + metadata                   = (known after apply)
       + name                       = "karpenter"
-      + namespace                  = "karpenter"
+      + namespace                  = "kube-system"
       + pass_credentials           = false
       + recreate_pods              = false
       + render_subchart_notes      = true
@@ -292,7 +425,7 @@ Terraform will perform the following actions:
       + status                     = "deployed"
       + timeout                    = 300
       + verify                     = false
-      + version                    = "0.7.2"
+      + version                    = "0.16.3"
       + wait                       = true
       + wait_for_jobs              = false
 
@@ -328,6 +461,424 @@ Terraform will perform the following actions:
         }
     }
 
+  # kubectl_manifest.karpenter_example_deployment will be created
+  + resource "kubectl_manifest" "karpenter_example_deployment" {
+      + api_version             = "apps/v1"
+      + apply_only              = false
+      + field_manager           = "kubectl"
+      + force_conflicts         = false
+      + force_new               = false
+      + id                      = (known after apply)
+      + kind                    = "Deployment"
+      + live_manifest_incluster = (sensitive value)
+      + live_uid                = (known after apply)
+      + name                    = "inflate"
+      + namespace               = (known after apply)
+      + server_side_apply       = false
+      + uid                     = (known after apply)
+      + validate_schema         = true
+      + wait_for_rollout        = true
+      + yaml_body               = (sensitive value)
+      + yaml_body_parsed        = <<-EOT
+            apiVersion: apps/v1
+            kind: Deployment
+            metadata:
+              name: inflate
+            spec:
+              replicas: 0
+              selector:
+                matchLabels:
+                  app: inflate
+              template:
+                metadata:
+                  labels:
+                    app: inflate
+                spec:
+                  containers:
+                  - image: public.ecr.aws/eks-distro/kubernetes/pause:3.7
+                    name: inflate
+                    resources:
+                      requests:
+                        cpu: 1
+                  terminationGracePeriodSeconds: 0
+        EOT
+      + yaml_incluster          = (sensitive value)
+    }
+
+  # kubectl_manifest.karpenter_node_class will be created
+  + resource "kubectl_manifest" "karpenter_node_class" {
+      + api_version             = (known after apply)
+      + apply_only              = false
+      + field_manager           = "kubectl"
+      + force_conflicts         = false
+      + force_new               = false
+      + id                      = (known after apply)
+      + kind                    = (known after apply)
+      + live_manifest_incluster = (sensitive value)
+      + live_uid                = (known after apply)
+      + name                    = (known after apply)
+      + namespace               = (known after apply)
+      + server_side_apply       = false
+      + uid                     = (known after apply)
+      + validate_schema         = true
+      + wait_for_rollout        = true
+      + yaml_body               = (sensitive value)
+      + yaml_body_parsed        = (known after apply)
+      + yaml_incluster          = (sensitive value)
+    }
+
+  # kubectl_manifest.karpenter_node_pool will be created
+  + resource "kubectl_manifest" "karpenter_node_pool" {
+      + api_version             = "karpenter.sh/v1beta1"
+      + apply_only              = false
+      + field_manager           = "kubectl"
+      + force_conflicts         = false
+      + force_new               = false
+      + id                      = (known after apply)
+      + kind                    = "NodePool"
+      + live_manifest_incluster = (sensitive value)
+      + live_uid                = (known after apply)
+      + name                    = "default"
+      + namespace               = (known after apply)
+      + server_side_apply       = false
+      + uid                     = (known after apply)
+      + validate_schema         = true
+      + wait_for_rollout        = true
+      + yaml_body               = (sensitive value)
+      + yaml_body_parsed        = <<-EOT
+            apiVersion: karpenter.sh/v1beta1
+            kind: NodePool
+            metadata:
+              name: default
+            spec:
+              disruption:
+      
+          consolidateAfter: 30s
+                consolidationPolicy: WhenEmpty
+              limits:
+                cpu: 1000
+              template:
+                spec:
+                  nodeClassRef:
+                    name: default
+                  requirements:
+                  - key: karpenter.k8s.aws/instance-category
+                    operator: In
+                    values:
+                    - c
+                    - m
+                    - r
+                  - key: karpenter.k8s.aws/instance-cpu
+                    operator: In
+                    values:
+                    - "4"
+                    - "8"
+                    - "16"
+                    - "32"
+                  - key: karpenter.k8s.aws/instance-hypervisor
+                    operator: In
+                    values:
+                    - nitro
+                  - key: karpenter.k8s.aws/instance-generation
+                    operator: Gt
+                    values:
+                    - "2"
+        EOT
+      + yaml_incluster          = (sensitive value)
+    }
+
+  # null_resource.kubeconfig will be created
+  + resource "null_resource" "kubeconfig" {
+      + id = (known after apply)
+    }
+
+  # module.aws_load_balancer_controller_irsa_role.data.aws_iam_policy_document.this[0] will be read during apply
+  # (config refers to values not yet known)
+ <= data "aws_iam_policy_document" "this" {
+      + id            = (known after apply)
+      + json          = (known after apply)
+      + minified_json = (known after apply)
+
+      + statement {
+          + actions = [
+              + "sts:AssumeRoleWithWebIdentity",
+            ]
+          + effect  = "Allow"
+
+          + condition {
+              + test     = "StringEquals"
+              + values   = [
+                  + "sts.amazonaws.com",
+                ]
+              + variable = (known after apply)
+            }
+          + condition {
+              + test     = "StringEquals"
+              + values   = [
+                  + "system:serviceaccount:kube-system:aws-load-balancer-controller",
+                ]
+              + variable = (known after apply)
+            }
+
+          + principals {
+              + identifiers = [
+                  + (known after apply),
+                ]
+              + type        = "Federated"
+            }
+        }
+    }
+
+  # module.aws_load_balancer_controller_irsa_role.aws_iam_policy.load_balancer_controller[0] will be created
+  + resource "aws_iam_policy" "load_balancer_controller" {
+      + arn              = (known after apply)
+      + attachment_count = (known after apply)
+      + description      = "Provides permissions for AWS Load Balancer Controller addon"
+      + id               = (known after apply)
+      + name             = (known after apply)
+      + name_prefix      = "AmazonEKS_AWS_Load_Balancer_Controller-"
+      + path             = "/"
+      + policy           = jsonencode(
+            {
+              + Statement = [
+                  + {
+                      + Action    = "iam:CreateServiceLinkedRole"
+                      + Condition = {
+                          + StringEquals = {
+                              + "iam:AWSServiceName" = "elasticloadbalancing.amazonaws.com"
+                            }
+                        }
+                      + Effect    = "Allow"
+                      + Resource  = "*"
+                    },
+                  + {
+                      + Action   = [
+                          + "elasticloadbalancing:DescribeTargetHealth",
+                          + "elasticloadbalancing:DescribeTargetGroups",
+                          + "elasticloadbalancing:DescribeTargetGroupAttributes",
+                          + "elasticloadbalancing:DescribeTags",
+                          + "elasticloadbalancing:DescribeSSLPolicies",
+                          + "elasticloadbalancing:DescribeRules",
+                          + "elasticloadbalancing:DescribeLoadBalancers",
+                          + "elasticloadbalancing:DescribeLoadBalancerAttributes",
+                          + "elasticloadbalancing:DescribeListeners",
+                          + "elasticloadbalancing:DescribeListenerCertificates",
+                          + "ec2:GetCoipPoolUsage",
+                          + "ec2:DescribeVpcs",
+                          + "ec2:DescribeVpcPeeringConnections",
+                          + "ec2:DescribeTags",
+                          + "ec2:DescribeSubnets",
+                          + "ec2:DescribeSecurityGroups",
+                          + "ec2:DescribeNetworkInterfaces",
+                          + "ec2:DescribeInternetGateways",
+                          + "ec2:DescribeInstances",
+                          + "ec2:DescribeCoipPools",
+                          + "ec2:DescribeAvailabilityZones",
+                          + "ec2:DescribeAddresses",
+                          + "ec2:DescribeAccountAttributes",
+                        ]
+                      + Effect   = "Allow"
+                      + Resource = "*"
+                    },
+                  + {
+                      + Action   = [
+                          + "wafv2:GetWebACLForResource",
+                          + "wafv2:GetWebACL",
+                          + "wafv2:DisassociateWebACL",
+                          + "wafv2:AssociateWebACL",
+                          + "waf-regional:GetWebACLForResource",
+                          + "waf-regional:GetWebACL",
+                          + "waf-regional:DisassociateWebACL",
+                          + "waf-regional:AssociateWebACL",
+                          + "shield:GetSubscriptionState",
+                          + "shield:DescribeProtection",
+                          + "shield:DeleteProtection",
+                          + "shield:CreateProtection",
+                          + "iam:ListServerCertificates",
+                          + "iam:GetServerCertificate",
+                          + "cognito-idp:DescribeUserPoolClient",
+                          + "acm:ListCertificates",
+                          + "acm:DescribeCertificate",
+                        ]
+                      + Effect   = "Allow"
+                      + Resource = "*"
+                    },
+                  + {
+                      + Action   = [
+                          + "ec2:RevokeSecurityGroupIngress",
+                          + "ec2:CreateSecurityGroup",
+                          + "ec2:AuthorizeSecurityGroupIngress",
+                        ]
+                      + Effect   = "Allow"
+                      + Resource = "*"
+                    },
+                  + {
+                      + Action    = "ec2:CreateTags"
+                      + Condition = {
+                          + Null         = {
+                              + "aws:RequestTag/elbv2.k8s.aws/cluster" = "false"
+                            }
+                          + StringEquals = {
+                              + "ec2:CreateAction" = "CreateSecurityGroup"
+                            }
+                        }
+                      + Effect    = "Allow"
+                      + Resource  = "arn:aws:ec2:*:*:security-group/*"
+                    },
+                  + {
+                      + Action    = [
+                          + "ec2:DeleteTags",
+                          + "ec2:CreateTags",
+                        ]
+                      + Condition = {
+                          + Null = {
+                              + "aws:RequestTag/elbv2.k8s.aws/cluster"  = "true"
+                              + "aws:ResourceTag/elbv2.k8s.aws/cluster" = "false"
+                            }
+                        }
+                      + Effect    = "Allow"
+                      + Resource  = "arn:aws:ec2:*:*:security-group/*"
+                    },
+                  + {
+                      + Action    = [
+                          + "ec2:RevokeSecurityGroupIngress",
+                          + "ec2:DeleteSecurityGroup",
+                          + "ec2:AuthorizeSecurityGroupIngress",
+                        ]
+                      + Condition = {
+                          + Null = {
+                              + "aws:ResourceTag/elbv2.k8s.aws/cluster" = "false"
+         
+                   }
+                        }
+                      + Effect    = "Allow"
+                      + Resource  = "*"
+                    },
+                  + {
+                      + Action    = [
+                          + "elasticloadbalancing:CreateTargetGroup",
+                          + "elasticloadbalancing:CreateLoadBalancer",
+                        ]
+                      + Condition = {
+                          + Null = {
+                              + "aws:RequestTag/elbv2.k8s.aws/cluster" = "false"
+                            }
+                        }
+                      + Effect    = "Allow"
+                      + Resource  = "*"
+                    },
+                  + {
+                      + Action   = [
+                          + "elasticloadbalancing:DeleteRule",
+                          + "elasticloadbalancing:DeleteListener",
+                          + "elasticloadbalancing:CreateRule",
+                          + "elasticloadbalancing:CreateListener",
+                        ]
+                      + Effect   = "Allow"
+                      + Resource = "*"
+                    },
+                  + {
+                      + Action    = [
+                          + "elasticloadbalancing:RemoveTags",
+                          + "elasticloadbalancing:AddTags",
+                        ]
+                      + Condition = {
+                          + Null = {
+                              + "aws:RequestTag/elbv2.k8s.aws/cluster"  = "true"
+                              + "aws:ResourceTag/elbv2.k8s.aws/cluster" = "false"
+                            }
+                        }
+                      + Effect    = "Allow"
+                      + Resource  = [
+                          + "arn:aws:elasticloadbalancing:*:*:targetgroup/*/*",
+                          + "arn:aws:elasticloadbalancing:*:*:loadbalancer/net/*/*",
+                          + "arn:aws:elasticloadbalancing:*:*:loadbalancer/app/*/*",
+                        ]
+                    },
+                  + {
+                      + Action   = [
+                          + "elasticloadbalancing:RemoveTags",
+                          + "elasticloadbalancing:AddTags",
+                        ]
+                      + Effect   = "Allow"
+                      + Resource = [
+                          + "arn:aws:elasticloadbalancing:*:*:listener/net/*/*/*",
+                          + "arn:aws:elasticloadbalancing:*:*:listener/app/*/*/*",
+                          + "arn:aws:elasticloadbalancing:*:*:listener-rule/net/*/*/*",
+                          + "arn:aws:elasticloadbalancing:*:*:listener-rule/app/*/*/*",
+                        ]
+                    },
+                  + {
+                      + Action    = [
+                          + "elasticloadbalancing:SetSubnets",
+                          + "elasticloadbalancing:SetSecurityGroups",
+                          + "elasticloadbalancing:SetIpAddressType",
+                          + "elasticloadbalancing:ModifyTargetGroupAttributes",
+                          + "elasticloadbalancing:ModifyTargetGroup",
+                          + "elasticloadbalancing:ModifyLoadBalancerAttributes",
+                          + "elasticloadbalancing:DeleteTargetGroup",
+                          + "elasticloadbalancing:DeleteLoadBalancer",
+                        ]
+                      + Condition = {
+                          + Null = {
+                              + "aws:ResourceTag/elbv2.k8s.aws/cluster" = "false"
+                            }
+                        }
+                      + Effect    = "Allow"
+                      + Resource  = "*"
+                    },
+                  + {
+                      + Action   = [
+                          + "elasticloadbalancing:RegisterTargets",
+                          + "elasticloadbalancing:DeregisterTargets",
+                        ]
+                      + Effect   = "Allow"
+                      + Resource = "arn:aws:elasticloadbalancing:*:*:targetgroup/*/*"
+                    },
+                  + {
+                      + Action   = [
+                          + "elasticloadbalancing:SetWebAcl",
+                          + "elasticloadbalancing:RemoveListenerCertificates",
+                          + "elasticloadbalancing:ModifyRule",
+                          + "elasticloadbalancing:ModifyListener",
+                          + "elasticloadbalancing:AddListenerCertificates",
+                        ]
+                      + Effect   = "Allow"
+                      + Resource = "*"
+                    },
+                ]
+              + Version   = "2012-10-17"
+            }
+        )
+      + policy_id        = (known after apply)
+      + tags_all         = (known after apply)
+    }
+
+  # module.aws_load_balancer_controller_irsa_role.aws_iam_role.this[0] will be created
+  + resource "aws_iam_role" "this" {
+      + arn                   = (known after apply)
+      + assume_role_policy    = (known after apply)
+      + create_date           = (known after apply)
+      + force_detach_policies = true
+      + id                    = (known after apply)
+      + managed_policy_arns   = (known after apply)
+      + max_session_duration  = 3600
+      + name                  = "aws-load-balancer-controller"
+      + name_prefix           = (known after apply)
+      + path                  = "/"
+      + tags_all              = (known after apply)
+      + unique_id             = (known after apply)
+
+      + inline_policy (known after apply)
+    }
+
+  # module.aws_load_balancer_controller_irsa_role.aws_iam_role_policy_attachment.load_balancer_controller[0] will be created
+  + resource "aws_iam_role_policy_attachment" "load_balancer_controller" {
+      + id         = (known after apply)
+      + policy_arn = (known after apply)
+      + role       = "aws-load-balancer-controller"
+    }
+
   # module.ebs_kms_key.data.aws_iam_policy_document.this[0] will be read during apply
   # (config refers to values not yet known)
  <= data "aws_iam_policy_document" "this" {
@@ -348,7 +899,7 @@ Terraform will perform the following actions:
 
           + principals {
               + identifiers = [
-                  + "arn:aws:iam::019819012441:root",
+                  + "arn:aws:iam::933714606193:root",
                 ]
               + type        = "AWS"
             }
@@ -379,7 +930,7 @@ Terraform will perform the following actions:
 
           + principals {
               + identifiers = [
-                  + "arn:aws:iam::019819012441:user/Whiz_User_85401.25377679",
+                  + "arn:aws:iam::933714606193:user/Whiz_User_85401.17157593",
                 ]
               + type        = "AWS"
             }
@@ -399,10 +950,11 @@ Terraform will perform the following actions:
 
           + principals {
               + identifiers = [
-                  + "arn:aws:iam::019819012441:role/aws-service-role/autoscaling.amazonaws.com/AWSServiceRoleForAutoScaling",
+                  + "arn:aws:iam::933714606193:role/aws-service-role/autoscaling.amazonaws.com/AWSServiceRoleForAutoScaling",
                   + (known after apply),
                 ]
-              + type        = "AWS"
+          
+    + type        = "AWS"
             }
         }
       + statement {
@@ -424,7 +976,7 @@ Terraform will perform the following actions:
 
           + principals {
               + identifiers = [
-                  + "arn:aws:iam::019819012441:role/aws-service-role/autoscaling.amazonaws.com/AWSServiceRoleForAutoScaling",
+                  + "arn:aws:iam::933714606193:role/aws-service-role/autoscaling.amazonaws.com/AWSServiceRoleForAutoScaling",
                   + (known after apply),
                 ]
               + type        = "AWS"
@@ -533,7 +1085,7 @@ Terraform will perform the following actions:
       + id                = (known after apply)
       + kubernetes_groups = (known after apply)
       + modified_at       = (known after apply)
-      + principal_arn     = "arn:aws:iam::019819012441:user/Whiz_User_85401.25377679"
+      + principal_arn     = "arn:aws:iam::933714606193:user/Whiz_User_85401.17157593"
       + tags_all          = (known after apply)
       + type              = "STANDARD"
       + user_name         = (known after apply)
@@ -546,11 +1098,10 @@ Terraform will perform the following actions:
       + id            = (known after apply)
       + modified_at   = (known after apply)
       + policy_arn    = "arn:aws:eks::aws:cluster-access-policy/AmazonEKSClusterAdminPolicy"
-      + principal_arn = "arn:aws:iam::019819012441:user/Whiz_User_85401.25377679"
+      + principal_arn = "arn:aws:iam::933714606193:user/Whiz_User_85401.17157593"
 
       + access_scope {
-          
-+ type = "cluster"
+          + type = "cluster"
         }
     }
 
@@ -605,7 +1156,8 @@ Terraform will perform the following actions:
       + arn                         = (known after apply)
       + cluster_name                = "eks-dev-cluster-eks-mng"
       + configuration_values        = (known after apply)
-      + created_at                  = (known after apply)
+      + created_at                  = (kno
+wn after apply)
       + id                          = (known after apply)
       + modified_at                 = (known after apply)
       + preserve                    = true
@@ -679,8 +1231,8 @@ Terraform will perform the following actions:
             ]
           + security_group_ids        = (known after apply)
           + subnet_ids                = [
-              + "subnet-02210ae8f43f2a2ae",
-              + "subnet-03bf999b681376a8a",
+              + "subnet-044f05d3f1a1c0f45",
+              + "subnet-045f67f94d99d773b",
             ]
           + vpc_id                    = (known after apply)
         }
@@ -769,8 +1321,7 @@ Terraform will perform the following actions:
   + resource "aws_iam_role_policy_attachment" "cluster_encryption" {
       + id         = (known after apply)
       + policy_arn = (known after apply)
-   
-   + role       = (known after apply)
+      + role       = (known after apply)
     }
 
   # module.eks.aws_iam_role_policy_attachment.this["AmazonEKSClusterPolicy"] will be created
@@ -804,7 +1355,7 @@ Terraform will perform the following actions:
       + tags_all               = {
           + "Name" = "eks-dev-cluster-eks-mng-cluster"
         }
-      + vpc_id                 = "vpc-0c4b1674c20159053"
+      + vpc_id                 = "vpc-06a31476a83ace8ee"
     }
 
   # module.eks.aws_security_group.node[0] will be created
@@ -820,13 +1371,14 @@ Terraform will perform the following actions:
       + revoke_rules_on_delete = false
       + tags                   = {
           + "Name"                                          = "eks-dev-cluster-eks-mng-node"
-          + "kubernetes.io/cluster/eks-dev-cluster-eks-mng" = "owned"
+          + "kubernetes.io/cluster/eks-dev-cluster
+-eks-mng" = "owned"
         }
       + tags_all               = {
           + "Name"                                          = "eks-dev-cluster-eks-mng-node"
           + "kubernetes.io/cluster/eks-dev-cluster-eks-mng" = "owned"
         }
-      + vpc_id                 = "vpc-0c4b1674c20159053"
+      + vpc_id                 = "vpc-06a31476a83ace8ee"
     }
 
   # module.eks.aws_security_group_rule.cluster["ingress_nodes_443"] will be created
@@ -953,8 +1505,7 @@ Terraform will perform the following actions:
 
   # module.eks.aws_security_group_rule.node["ingress_nodes_ephemeral"] will be created
   + resource "aws_security_group_rule" "node" {
-      + description         
-     = "Node to node ingress on ephemeral ports"
+      + description              = "Node to node ingress on ephemeral ports"
       + from_port                = 1025
       + id                       = (known after apply)
       + prefix_list_ids          = []
@@ -1005,7 +1556,8 @@ Terraform will perform the following actions:
           + "cluster_certificate_authority_data" = (known after apply)
           + "cluster_endpoint"                   = (known after apply)
           + "cluster_name"                       = "eks-dev-cluster-eks-mng"
-          + "cluster_service_cidr"               = (known after apply)
+          + "cluster_service_cidr"         
+      = (known after apply)
           + "cluster_version"                    = "1.30"
         }
     }
@@ -1059,7 +1611,7 @@ Terraform will perform the following actions:
               + "ec2:RunInstances",
             ]
           + resources = [
-              + "arn:aws:ec2:*:019819012441:launch-template/*",
+              + "arn:aws:ec2:*:933714606193:launch-template/*",
             ]
 
           + condition {
@@ -1075,12 +1627,12 @@ Terraform will perform the following actions:
               + "ec2:RunInstances",
             ]
           + resources = [
-              + "arn:aws:ec2:*:019819012441:instance/*",
-              + "arn:aws:ec2:*:019819012441:network-interface/*",
-              + "arn:aws:ec2:*:019819012441:security-group/*",
-              + "arn:aws:ec2:*:019819012441:spot-instances-request/*",
-              + "arn:aws:ec2:*:019819012441:subnet/*",
-              + "arn:aws:ec2:*:019819012441:volume/*",
+              + "arn:aws:ec2:*:933714606193:instance/*",
+              + "arn:aws:ec2:*:933714606193:network-interface/*",
+              + "arn:aws:ec2:*:933714606193:security-group/*",
+              + "arn:aws:ec2:*:933714606193:spot-instances-request/*",
+              + "arn:aws:ec2:*:933714606193:subnet/*",
+              + "arn:aws:ec2:*:933714606193:volume/*",
               + "arn:aws:ec2:*::image/*",
             ]
         }
@@ -1105,7 +1657,7 @@ Terraform will perform the following actions:
               + "eks:DescribeCluster",
             ]
           + resources = [
-              + "arn:aws:eks:us-east-1:019819012441:cluster/eks-dev-cluster-eks-mng",
+              + "arn:aws:eks:us-east-1:933714606193:cluster/eks-dev-cluster-eks-mng",
             ]
         }
     }
@@ -1180,8 +1732,7 @@ Terraform will perform the following actions:
       + force_detach_policies = true
       + id                    = (known after apply)
       + managed_policy_arns   = (known after apply)
-      + max_
-session_duration  = 3600
+      + max_session_duration  = 3600
       + name                  = "karpenter_controller"
       + name_prefix           = (known after apply)
       + path                  = "/"
@@ -1207,6 +1758,829 @@ session_duration  = 3600
       + id         = (known after apply)
       + policy_arn = (known after apply)
       + role       = "karpenter_controller"
+    }
+
+  # module.karpenter.data.aws_iam_policy_document.controller[0] will be read during apply
+  # (config refers to values not yet known)
+ <= data "aws_iam_policy_document" "controller" {
+      + id            = (known after apply)
+      + json          = (known after apply)
+      + minified_json = (known after apply)
+
+      + statement {
+          + actions   = [
+              + "ec2:CreateFleet",
+              + "ec2:RunInstances",
+            ]
+          + resources = [
+              + "arn:aws:ec2:*:*:launch-template/*",
+              + "arn:aws:ec2:*:*:security-group/*",
+              + "arn:aws:ec2:*:*:spot-instances-request/*",
+              + "arn:aws:ec2:*:*:subnet/*",
+              + "arn:aws:ec2:*::image/*",
+              + "arn:aws:ec2:*::snapshot/*",
+            ]
+          + sid       = "AllowScopedEC2InstanceActions"
+        }
+      + statement {
+          + actions   = [
+              + "ec2:CreateFleet",
+              + "ec2:CreateLaunchTemplate",
+              + "ec2:RunInstances",
+            ]
+          + resources = [
+              + "arn:aws:ec2:*:*:fleet/*",
+              + "arn:aws:ec2:*:*:instance/*",
+              + "arn:aws:ec2:*:*:launch-template/*",
+              + "arn:aws:ec2:*:*:network-interface/*",
+      
+        + "arn:aws:ec2:*:*:spot-instances-request/*",
+              + "arn:aws:ec2:*:*:volume/*",
+            ]
+          + sid       = "AllowScopedEC2InstanceActionsWithTags"
+
+          + condition {
+              + test     = "StringEquals"
+              + values   = [
+                  + "owned",
+                ]
+              + variable = "aws:RequestTag/kubernetes.io/cluster/eks-dev-cluster-eks-mng"
+            }
+          + condition {
+              + test     = "StringLike"
+              + values   = [
+                  + "*",
+                ]
+              + variable = "aws:RequestTag/karpenter.sh/nodepool"
+            }
+        }
+      + statement {
+          + actions   = [
+              + "ec2:CreateTags",
+            ]
+          + resources = [
+              + "arn:aws:ec2:*:*:fleet/*",
+              + "arn:aws:ec2:*:*:instance/*",
+              + "arn:aws:ec2:*:*:launch-template/*",
+              + "arn:aws:ec2:*:*:network-interface/*",
+              + "arn:aws:ec2:*:*:spot-instances-request/*",
+              + "arn:aws:ec2:*:*:volume/*",
+            ]
+          + sid       = "AllowScopedResourceCreationTagging"
+
+          + condition {
+              + test     = "StringEquals"
+              + values   = [
+                  + "RunInstances",
+                  + "CreateFleet",
+                  + "CreateLaunchTemplate",
+                ]
+              + variable = "ec2:CreateAction"
+            }
+          + condition {
+              + test     = "StringEquals"
+              + values   = [
+                  + "owned",
+                ]
+              + variable = "aws:RequestTag/kubernetes.io/cluster/eks-dev-cluster-eks-mng"
+            }
+          + condition {
+              + test     = "StringLike"
+              + values   = [
+                  + "*",
+                ]
+              + variable = "aws:RequestTag/karpenter.sh/nodepool"
+            }
+        }
+      + statement {
+          + actions   = [
+              + "ec2:CreateTags",
+            ]
+          + resources = [
+              + "arn:aws:ec2:*:*:instance/*",
+            ]
+          + sid       = "AllowScopedResourceTagging"
+
+          + condition {
+              + test     = "ForAllValues:StringEquals"
+              + values   = [
+                  + "karpenter.sh/nodeclaim",
+                  + "Name",
+                ]
+              + variable = "aws:TagKeys"
+            }
+          + condition {
+              + test     = "StringEquals"
+              + values   = [
+                  + "owned",
+                ]
+              + variable = "aws:ResourceTag/kubernetes.io/cluster/eks-dev-cluster-eks-mng"
+            }
+          + condition {
+              + test     = "StringLike"
+              + values   = [
+                  + "*",
+                ]
+              + variable = "aws:ResourceTag/karpenter.sh/nodepool"
+            }
+        }
+      + statement {
+          + actions   = [
+              + "ec2:DeleteLaunchTemplate",
+              + "ec2:TerminateInstances",
+            ]
+          + resources = [
+              + "arn:aws:ec2:*:*:instance/*",
+              + "arn:aws:ec2:*:*:launch-template/*",
+            ]
+          + sid       = "AllowScopedDeletion"
+
+          + condition {
+              + test     = "StringEquals"
+              + values   = [
+                  + "owned",
+                ]
+              + variable = "aws:ResourceTag/kubernetes.io/cluster/eks-dev-cluster-eks-mng"
+            }
+          + condition {
+              + test     = "StringLike"
+              + values   = [
+                  + "*",
+                ]
+              + variable = "aws:ResourceTag/karpenter.sh/nodepool"
+            }
+        }
+      + statement {
+          + actions   = [
+              + "ec2:DescribeAvailabilityZones",
+              + "ec2:DescribeImages",
+              + "ec2:DescribeInstanceTypeOfferings",
+              + "ec2:DescribeInstanceTypes",
+              + "ec2:DescribeInstances",
+              + "ec2:DescribeLaunchTemplates",
+              + "ec2:DescribeSecurityGroups",
+              + "ec2:DescribeSpotPriceHistory",
+              + "ec2:DescribeSubnets",
+            ]
+          + resources = [
+              + "*",
+            ]
+          + sid       = "AllowRegionalReadActions"
+
+          + condition {
+              + test     = "StringEquals"
+              + values   = [
+                  + "us-east-1",
+                ]
+              + variable = "aws:RequestedRegion"
+            }
+        }
+      + statement {
+          + actions   = [
+              + "ssm:GetParameter",
+            ]
+          + resources = [
+              + "arn:aws:ssm:us-east-1::parameter/aws/service/*",
+            ]
+          + sid       = "AllowSSMReadActions"
+        }
+      + statement {
+          + actions   = [
+              + "pricing:GetProducts",
+            ]
+          + resources = [
+              + "*",
+            ]
+          + sid       = "AllowPricingReadActions"
+        }
+      + statement {
+          + actions   = [
+              + "sqs:DeleteMessage",
+              + "sqs:GetQueueAttributes",
+              + "sqs:GetQueueUrl",
+              + "sqs:ReceiveMessage",
+            ]
+          + resources = [
+              + (known after apply),
+            ]
+          + sid       = "AllowInterruptionQueueActions"
+        }
+      + statement {
+          + actions   = [
+              + "iam:PassRole",
+            ]
+          + resources = [
+              + (known after apply),
+            ]
+          + sid       = "AllowPassingInstanceRole"
+
+          + condition {
+              + test     = "StringEquals"
+              + values   = [
+                  + "ec2.amazonaws.com",
+                ]
+              + variable = "iam:PassedToService"
+            }
+        }
+      + statement {
+          + actions   = [
+              + "iam:CreateInstanceProfile",
+            ]
+          + resources = [
+              + "*",
+            ]
+          + sid       = "AllowScopedInstanceProfileCreationActions"
+
+          + condition {
+              + test     = "StringEquals"
+              + values   = [
+                  + "owned",
+                ]
+              + variable = "aws:RequestTag/kubernetes.io/cluster/eks-dev-cluster-eks-mng"
+            }
+          + condition {
+              + test     = "StringEquals"
+              + values   = [
+                  + "us-east-1",
+                ]
+              + variable = "aws:RequestTag/topology.kubernetes.io/region"
+            }
+          + condition {
+              + test     = "StringLike"
+              + values   = [
+                  + "*",
+                ]
+              + variable = "aws:RequestTag/karpenter.k8s.aws/ec2nodeclass"
+            }
+        }
+      + statement {
+          + actions   = [
+              + "iam:TagInstanceProfile",
+            ]
+          + resources = [
+              + "*",
+            ]
+          + sid       = "AllowScopedInstanceProfileTagActions"
+
+          + condition {
+              + test     = "StringEquals"
+              + values   = [
+                  + "owned",
+                ]
+              + variable = "aws:RequestTag/kubernetes.io/cluster/eks-dev-cluster-eks-mng"
+            }
+          + condition {
+              + test     = "StringEquals"
+              + values   = [
+                  + "owned",
+                ]
+              + variable = "aws:ResourceTag/kubernetes.io/cluster/eks-dev-cluster-eks-mng"
+            }
+          + condition {
+              + test     = "StringEquals"
+              + values   = [
+                  + "us-east-1",
+                ]
+              + variable = "aws:ResourceTag/topology.kubernetes.io/region"
+            }
+          + condition {
+              + test     = "StringLike"
+              + values   = [
+                  + "*",
+                ]
+              + variable = "aws:RequestTag/karpenter.k8s.aws/ec2nodeclass"
+            }
+          + condition {
+              + test     = "StringLike"
+              + values   = [
+                  + "*",
+                ]
+              + variable = "aws:ResourceTag/karpenter.k8s.aws/ec2nodeclass"
+            }
+        }
+      + statement {
+          + actions   = [
+              + "iam:AddRo
+leToInstanceProfile",
+              + "iam:DeleteInstanceProfile",
+              + "iam:RemoveRoleFromInstanceProfile",
+            ]
+          + resources = [
+              + "*",
+            ]
+          + sid       = "AllowScopedInstanceProfileActions"
+
+          + condition {
+              + test     = "StringEquals"
+              + values   = [
+                  + "owned",
+                ]
+              + variable = "aws:ResourceTag/kubernetes.io/cluster/eks-dev-cluster-eks-mng"
+            }
+          + condition {
+              + test     = "StringEquals"
+              + values   = [
+                  + "us-east-1",
+                ]
+              + variable = "aws:ResourceTag/topology.kubernetes.io/region"
+            }
+          + condition {
+              + test     = "StringLike"
+              + values   = [
+                  + "*",
+                ]
+              + variable = "aws:ResourceTag/karpenter.k8s.aws/ec2nodeclass"
+            }
+        }
+      + statement {
+          + actions   = [
+              + "iam:GetInstanceProfile",
+            ]
+          + resources = [
+              + "*",
+            ]
+          + sid       = "AllowInstanceProfileReadActions"
+        }
+      + statement {
+          + actions   = [
+              + "eks:DescribeCluster",
+            ]
+          + resources = [
+              + "arn:aws:eks:us-east-1:933714606193:cluster/eks-dev-cluster-eks-mng",
+            ]
+          + sid       = "AllowAPIServerEndpointDiscovery"
+        }
+    }
+  # module.karpenter.data.aws_iam_policy_document.queue[0] will be read during apply
+  # (config refers to values not yet known)
+ <= data "aws_iam_policy_document" "queue" {
+      + id            = (known after apply)
+      + json          = (known after apply)
+      + minified_json = (known after apply)
+
+      + statement {
+          + actions   = [
+              + "sqs:SendMessage",
+            ]
+          + resources = [
+              + (known after apply),
+            ]
+          + sid       = "SqsWrite"
+
+          + principals {
+              + identifiers = [
+                  + "events.amazonaws.com",
+                  + "sqs.amazonaws.com",
+                ]
+              + type        = "Service"
+            }
+        }
+      + statement {
+          + actions   = [
+              + "sqs:*",
+            ]
+          + effect    = "Deny"
+          + resources = [
+              + (known after apply),
+            ]
+          + sid       = "DenyHTTP"
+
+          + condition {
+              + test     = "StringEquals"
+              + values   = [
+                  + "false",
+                ]
+              + variable = "aws:SecureTransport"
+            }
+
+          + principals {
+              + identifiers = [
+                  + "*",
+                ]
+              + type        = "*"
+            }
+        }
+    }
+
+  # module.karpenter.aws_cloudwatch_event_rule.this["health_event"] will be created
+  + resource "aws_cloudwatch_event_rule" "this" {
+      + arn            = (known after apply)
+      + description    = "Karpenter interrupt - AWS health event"
+      + event_bus_name = "default"
+      + event_pattern  = jsonencode(
+            {
+              + detail-type = [
+                  + "AWS Health Event",
+                ]
+              + source      = [
+                  + "aws.health",
+                ]
+            }
+        )
+      + force_destroy  = false
+      + id             = (known after apply)
+      + name           = (known after apply)
+      + name_prefix    = "KarpenterHealthEvent-"
+      + tags           = {
+          + "ClusterName" = "eks-dev-cluster-eks-mng"
+          + "Env"         = "dev"
+          + "Example"     = "eks-dev-cluster-eks-mng"
+          + "GithubOrg"   = "terraform-aws-modules"
+          + "GithubRepo"  = "terraform-aws-eks"
+        }
+      + tags_all       = {
+          + "ClusterName" = "eks-dev-cluster-eks-mng"
+          + "Env"         = "dev"
+          + "Example"     = "eks-dev-cluster-eks-mng"
+          + "GithubOrg"   = "terraform-aws-modules"
+          + "GithubRepo"  = "terraform-aws-eks"
+        }
+    }
+
+  # module.karpenter.aws_cloudwatch_event_rule.this["instance_rebalance"] will be created
+  + resource "aws_cloudwatch_event_rule" "this" {
+      + arn            = (known after apply)
+      + description    = "Karpenter interrupt - EC2 instance rebalance recommendation"
+      + event_bus_name = "default"
+      + event_pattern  = jsonencode(
+            {
+              + detail-type = [
+                  + "EC2 Instance Rebalance Recommendation",
+                ]
+              + source      = [
+                  + "aws.ec2",
+                ]
+            }
+        )
+      + force_destroy  = false
+      + id             = (known after apply)
+      + name           = (known after apply)
+      + name_prefix    = "KarpenterInstanceRebalance-"
+      + tags           = {
+          + "ClusterName" = "eks-dev-cluster-eks-mng"
+          + "Env"         = "dev"
+          + "Example"     = "eks-dev-cluster-eks-mng"
+          + "GithubOrg"   = "terraform-aws-modules"
+          + "GithubRepo"  = "terraform-aws-eks"
+        }
+      + tags_all       = {
+          + "ClusterName" = "eks-dev-cluster-eks-mng"
+          + "Env"         = "dev"
+          + "Example"     = "eks-dev-cluster-eks-mng"
+          + "GithubOrg"   = "terraform-aws-modules"
+          + "GithubRepo"  = "terraform-aws-eks"
+        }
+    }
+
+  # module.karpenter.aws_cloudwatch_event_rule.this["instance_state_change"] will be created
+  + resource "aws_cloudwatch_event_rule" "this" {
+      + arn            = (known after apply)
+      + description    = "Karpenter interrupt - EC2 instance state-change notification"
+      + event_bus_name = "default"
+      + event_pattern  = jsonencode(
+            {
+              + detail-type = [
+                  + "EC2 Instance State-change Notification",
+                ]
+              + source      = [
+                  + "aws.ec2",
+                ]
+            }
+        )
+      + force_destroy  = false
+      + id             = (known after apply)
+      + name           = (known after apply)
+      + name_prefix    = "KarpenterInstanceStateChange-"
+      + tags           = {
+          + "ClusterName" = "eks-dev-cluster-eks-mng"
+          + "Env"         = "dev"
+          + "Example"     = "eks-dev-cluster-eks-mng"
+          + "GithubOrg"   = "terraform-aws-modules"
+          + "GithubRepo"  = "terraform-aws-eks"
+        }
+      + tags_all       = {
+          + "ClusterName" = "eks-dev-cluster-eks-mng"
+          + "Env"         = "dev"
+          + "Example"     = "eks-dev-cluster-eks-mng"
+          + "GithubOrg"   = "terraform-aws-modules"
+          + "GithubRepo"  = "terraform-aws-eks"
+        }
+    }
+
+  # module.karpenter.aws_cloudwatch_event_rule.this["spot_interrupt"] will be created
+  + resource "aws_cloudwatch_event_rule" "this" {
+      + arn            = (known after apply)
+      + description    = "Karpenter interrupt - EC2 spot instance interruption warning"
+      + event_bus_name = "default"
+      + event_pattern  = jsonencode(
+            {
+              + detail-type = [
+                  + "EC2 Spot Instance Interruption Warning",
+                ]
+              + source      = [
+                  + "aws.ec2",
+                ]
+            }
+        )
+      + force_destroy  = false
+      + id             = (known after apply)
+      + name           = (known after apply)
+      + name_prefix    = "KarpenterSpotInterrupt-"
+      + tags           = {
+          + "ClusterName" = "eks-dev-cluster-eks-mng"
+          + "Env"         = "dev"
+          + "Example"     = "eks-dev-cluster-eks-mng"
+          + "GithubOrg"   = "terraform-aws-modules"
+          + "GithubRepo"  = "terraform-aws-eks"
+        }
+      + tags_all       = {
+          + "ClusterName" = "eks-dev-cluster-eks-mng"
+          + "Env"         = "dev"
+          + "Example"     = "eks-dev-cluster-eks-mng"
+          + "GithubOrg"   = "terraform-aws-modules"
+          + "GithubRepo"  = "terraform-aws-eks"
+        }
+    }
+
+  # module.karpenter.aws_cloudwatch_event_target.this["health_event"] will be created
+  + resource "aws_cloudwatch_event_target" "this" {
+      + arn            = (known after apply)
+      + event_bus_name = "default"
+      + force_destroy  = false
+      + id             = (known after apply)
+      + rule           = (known after apply)
+      + target_id      = "KarpenterInterruptionQueueTarget"
+    }
+
+  # module.karpenter.aws_cloudwatch_event_target.this["instance_rebalance"] will be created
+  + resource "aws_cloudwatch_event_target" "this" {
+      + arn            = (known after apply)
+      + event_bus_name = "default"
+      + force_destroy  = false
+      + id             = (known after apply)
+      + rule           = (known after apply)
+      + target_id      = "KarpenterInterruptionQueueTarget"
+    }
+
+  # module.karpenter.aws_cloudwatch_event_target.this["instance_state_change"] will be created
+  + resource "aws_cloudwatch_event_target" "this" {
+      + arn            = (known after apply)
+      + event_bus_name = "default"
+      + force_destroy  = false
+      + id             = (known after apply)
+      + rule           = (known after apply)
+      + target_id      = "KarpenterInterruptionQueueTarget"
+    }
+
+  # module.karpenter.aws_cloudwatch_event_target.this["spot_interrupt"] will be created
+  + resource "aws_cloudwatch_event_target" "this" {
+      + arn            = (known after apply)
+      + event_bus_name = "default"
+      + force_destroy  = false
+      + id             = (known after apply)
+      + rule           = (known after apply)
+      + target_id      = "KarpenterInterruptionQueueTarget"
+    }
+
+  # module.karpenter.aws_eks_access_entry.node[0] will be created
+  + resource "aws_eks_access_entry" "node" {
+      + access_entry_arn  = (known after apply)
+      + cluster_name      = "eks-dev-cluster-eks-mng"
+      + created_at        = (known after apply)
+      + id                = (known after apply)
+      + kubernetes_groups = (known after apply)
+      + modified_at       = (known after apply)
+      + principal_arn     = (known after apply)
+      + tags              = {
+          + "Env"        = "dev"
+          + "Example"    = "eks-dev-cluster-eks-mng"
+          + "GithubOrg"  = "terraform-aws-modules"
+          + "GithubRepo" = "terraform-aws-eks"
+        }
+      + tags_all          = {
+          + "Env"        = "dev"
+          + "Example"    = "eks-dev-cluster-eks-mng"
+          + "GithubOrg"  = "terraform-aws-modules"
+          + "GithubRepo" = "terraform-aws-eks"
+        }
+      + type              = "EC2_LINUX"
+      + user_name         = (known after apply)
+    }
+
+  # module.karpenter.aws_eks_pod_identity_association.karpenter[0] will be created
+  + resource "aws_eks_pod_identity_association" "karpenter" {
+      + association_arn = (known after apply)
+      + association_id  = (known after apply)
+      + cluster_name    = "eks-dev-cluster-eks-mng"
+      + id              = (known after apply)
+      + n
+amespace       = "kube-system"
+      + role_arn        = (known after apply)
+      + service_account = "karpenter"
+      + tags            = {
+          + "Env"        = "dev"
+          + "Example"    = "eks-dev-cluster-eks-mng"
+          + "GithubOrg"  = "terraform-aws-modules"
+          + "GithubRepo" = "terraform-aws-eks"
+        }
+      + tags_all        = {
+          + "Env"        = "dev"
+          + "Example"    = "eks-dev-cluster-eks-mng"
+          + "GithubOrg"  = "terraform-aws-modules"
+          + "GithubRepo" = "terraform-aws-eks"
+        }
+    }
+
+  # module.karpenter.aws_iam_policy.controller[0] will be created
+  + resource "aws_iam_policy" "controller" {
+      + arn              = (known after apply)
+      + attachment_count = (known after apply)
+      + description      = "Karpenter controller IAM policy"
+      + id               = (known after apply)
+      + name             = (known after apply)
+      + name_prefix      = "KarpenterController-"
+      + path             = "/"
+      + policy           = (known after apply)
+      + policy_id        = (known after apply)
+      + tags             = {
+          + "Env"        = "dev"
+          + "Example"    = "eks-dev-cluster-eks-mng"
+          + "GithubOrg"  = "terraform-aws-modules"
+          + "GithubRepo" = "terraform-aws-eks"
+        }
+      + tags_all         = {
+          + "Env"        = "dev"
+          + "Example"    = "eks-dev-cluster-eks-mng"
+          + "GithubOrg"  = "terraform-aws-modules"
+          + "GithubRepo" = "terraform-aws-eks"
+        }
+    }
+
+  # module.karpenter.aws_iam_role.controller[0] will be created
+  + resource "aws_iam_role" "controller" {
+      + arn                   = (known after apply)
+      + assume_role_policy    = jsonencode(
+            {
+              + Statement = [
+                  + {
+                      + Action    = [
+                          + "sts:TagSession",
+                          + "sts:AssumeRole",
+                        ]
+                      + Effect    = "Allow"
+                      + Principal = {
+                          + Service = "pods.eks.amazonaws.com"
+                        }
+                    },
+                ]
+              + Version   = "2012-10-17"
+            }
+        )
+      + create_date           = (known after apply)
+      + description           = "Karpenter controller IAM role"
+      + force_detach_policies = true
+      + id                    = (known after apply)
+      + managed_policy_arns   = (known after apply)
+      + max_session_duration  = 3600
+      + name                  = (known after apply)
+      + name_prefix           = "KarpenterController-"
+      + path                  = "/"
+      + tags                  = {
+          + "Env"        = "dev"
+          + "Example"    = "eks-dev-cluster-eks-mng"
+          + "GithubOrg"  = "terraform-aws-modules"
+          + "GithubRepo" = "terraform-aws-eks"
+        }
+      + tags_all              = {
+          + "Env"        = "dev"
+          + "Example"    = "eks-dev-cluster-eks-mng"
+          + "GithubOrg"  = "terraform-aws-modules"
+          + "GithubRepo" = "terraform-aws-eks"
+        }
+      + unique_id             = (known after apply)
+
+      + inline_policy (known after apply)
+    }
+
+  # module.karpenter.aws_iam_role.node[0] will be created
+  + resource "aws_iam_role" "node" {
+      + arn                   = (known after apply)
+      + assume_role_policy    = jsonencode(
+            {
+              + Statement = [
+                  + {
+                      + Action    = "sts:AssumeRole"
+                      + Effect    = "Allow"
+                      + Principal = {
+                          + Service = "ec2.amazonaws.com"
+                        }
+                      + Sid       = "EKSNodeAssumeRole"
+                    },
+                ]
+              + Version   = "2012-10-17"
+            }
+        )
+      + create_date           = (known after apply)
+      + force_detach_policies = true
+      + id                    = (known after apply)
+      + managed_policy_arns   = (known after apply)
+      + max_session_duration  = 3600
+      + name                  = (known after apply)
+      + name_prefix           = "Karpenter-eks-dev-cluster-eks-mng-"
+      + path                  = "/"
+      + tags                  = {
+          + "Env"        = "dev"
+          + "Example"    = "eks-dev-cluster-eks-mng"
+          + "GithubOrg"  = "terraform-aws-modules"
+          + "GithubRepo" = "terraform-aws-eks"
+        }
+      + tags_all              = {
+          + "Env"        = "dev"
+          + "Example"    = "eks-dev-cluster-eks-mng"
+          + "GithubOrg"  = "terraform-aws-modules"
+          + "GithubRepo" = "terraform-aws-eks"
+        }
+      + unique_id             = (known after apply)
+
+      + inline_policy (known after apply)
+    }
+
+  # module.karpenter.aws_iam_role_policy_attachment.controller[0] will be created
+  + resource "aws_iam_role_policy_attachment" "controller" {
+      + id         = (known after apply)
+      + policy_arn = (known after apply)
+      + role       = (known after apply)
+    }
+
+  # module.karpenter.aws_iam_role_policy_attachment.node["AmazonEC2ContainerRegistryReadOnly"] will be created
+  + resource "aws_iam_role_policy_attachment" "node" {
+      + id         = (known after apply)
+      + policy_arn = "arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly"
+      + role       = (known after apply)
+    }
+
+  # module.karpenter.aws_iam_role_policy_attachment.node["AmazonEKSWorkerNodePolicy"] will be created
+  + resource "aws_iam_role_policy_attachment" "node" {
+      + id         = (known after apply)
+      + policy_arn = "arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy"
+      + role       = (known after apply)
+    }
+
+  # module.karpenter.aws_iam_role_policy_attachment.node["AmazonEKS_CNI_Policy"] will be created
+  + resource "aws_iam_role_policy_attachment" "node" {
+      + id         = (known after apply)
+      + policy_arn = "arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy"
+      + role       = (known after apply)
+    }
+
+  # module.karpenter.aws_iam_role_policy_attachment.node_additional["AmazonSSMManagedInstanceCore"] will be created
+  + resource "aws_iam_role_policy_attachment" "node_additional" {
+      + id         = (known after apply)
+      + policy_arn = "arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore"
+      + role       = (known after apply)
+    }
+
+  # module.karpenter.aws_sqs_queue.this[0] will be created
+  + resource "aws_sqs_queue" "this" {
+      + arn                               = (known after apply)
+      + content_based_deduplication       = false
+      + deduplication_scope               = (known after apply)
+      + delay_seconds                     = 0
+      + fifo_queue                        = false
+      + fifo_throughput_limit             = (known after apply)
+      + id                                = (known after apply)
+      + kms_data_key_reuse_period_seconds = (known after apply)
+      + max_message_size                  = 262144
+      + message_retention_seconds         = 300
+      + name                              = "Karpenter-eks-dev-cluster-eks-mng"
+      + name_prefix                       = (known after apply)
+      + policy                            = (known after apply)
+      + receive_wait_time_seconds         = 0
+      + redrive_allow_policy              = (known after apply)
+      + redrive_policy                    = (known after apply)
+      + sqs_managed_sse_enabled           = true
+      + tags                              = {
+          + "Env"        = "dev"
+          + "Example"    = "eks-dev-cluster-eks-mng"
+          + "GithubOrg"  = "terraform-aws-modules"
+          + "GithubRepo" = "terraform-aws-eks"
+        }
+      + tags_all                          = {
+          + "Env"        = "dev"
+          + "Example"    = "eks-dev-cluster-eks-mng"
+          + "GithubOrg"  = "terraform-aws-modules"
+          + "GithubRepo" = "terraform-aws-eks"
+        }
+      + url                               = (known after apply)
+      + visibility_timeout_seconds        = 30
+    }
+
+  # module.karpenter.aws_sqs_queue_policy.this[0] will be created
+  + resource "aw
+s_sqs_queue_policy" "this" {
+      + id        = (known after apply)
+      + policy    = (known after apply)
+      + queue_url = (known after apply)
     }
 
   # module.key_pair.aws_key_pair.this[0] will be created
@@ -1389,14 +2763,13 @@ session_duration  = 3600
         ]
       + node_group_name        = (known after apply)
       + node_group_name_prefix = "access_entries-"
-      + node_role_arn
-          = (known after apply)
+      + node_role_arn          = (known after apply)
       + release_version        = (known after apply)
       + resources              = (known after apply)
       + status                 = (known after apply)
       + subnet_ids             = [
-          + "subnet-02210ae8f43f2a2ae",
-          + "subnet-03bf999b681376a8a",
+          + "subnet-044f05d3f1a1c0f45",
+          + "subnet-045f67f94d99d773b",
         ]
       + tags                   = {
           + "Name" = "access_entries"
@@ -1421,7 +2794,8 @@ session_duration  = 3600
       + timeouts {}
 
       + update_config {
-          + max_unavailable_percentage = 33
+          + max_unavailable_percenta
+ge = 33
         }
     }
 
@@ -1548,8 +2922,8 @@ session_duration  = 3600
       + resources              = (known after apply)
       + status                 = (known after apply)
       + subnet_ids             = [
-          + "subnet-02210ae8f43f2a2ae",
-          + "subnet-03bf999b681376a8a",
+          + "subnet-044f05d3f1a1c0f45",
+          + "subnet-045f67f94d99d773b",
         ]
       + tags                   = {
           + "ExtraTag"           = "EKS managed node group for eks-dev-cluster-eks-mng"
@@ -1581,8 +2955,8 @@ session_duration  = 3600
 
       + taint {
           + effect = "NO_SCHEDULE"
-          + key    = "dedicated"
-          + value  = "gpuGroup"
+          + key    = "CriticalAddonsOnly"
+          + value  = "true"
         }
 
       + timeouts {}
@@ -1613,8 +2987,7 @@ session_duration  = 3600
       + create_date           = (known after apply)
       + description           = "EKS managed node group IAM role for eks-dev-cluster-eks-mng"
       + force_detach_policies = true
-      
-+ id                    = (known after apply)
+      + id                    = (known after apply)
       + managed_policy_arns   = (known after apply)
       + max_session_duration  = 3600
       + name                  = "eks-managed-ng-role"
@@ -1631,7 +3004,8 @@ session_duration  = 3600
       + tags_all              = {
           + "ExtraTag"           = "EKS managed node group for eks-dev-cluster-eks-mng"
           + "Name"               = "eks-managed-ng"
-          + "Purpose"            = "Protector of the kubelet"
+          + "Purpose"         
+   = "Protector of the kubelet"
           + "eks/cluster-name"   = "eks-dev-cluster-eks-mng"
           + "eks/nodegroup-name" = "eks-managed-ng"
           + "eks/nodegroup-type" = "managed"
@@ -1777,8 +3151,7 @@ session_duration  = 3600
           + tags          = {
               + "ExtraTag"                                          = "EKS managed node group for eks-dev-cluster-eks-mng"
               + "Name"                                              = "eks-managed-ng"
-       
-       + "eks/cluster-name"                                  = "eks-dev-cluster-eks-mng"
+              + "eks/cluster-name"                                  = "eks-dev-cluster-eks-mng"
               + "eks/nodegroup-name"                                = "eks-managed-ng"
               + "eks/nodegroup-type"                                = "managed"
               + "k8s.io/cluster-autoscaler/eks-dev-cluster-eks-mng" = "owned"
@@ -1794,7 +3167,8 @@ session_duration  = 3600
       + capacity_type          = (known after apply)
       + cluster_name           = "eks-dev-cluster-eks-mng"
       + disk_size              = (known after apply)
-      + id                     = (known after apply)
+      + id                     = (known 
+after apply)
       + instance_types         = [
           + "t3.medium",
         ]
@@ -1805,8 +3179,8 @@ session_duration  = 3600
       + resources              = (known after apply)
       + status                 = (known after apply)
       + subnet_ids             = [
-          + "subnet-02210ae8f43f2a2ae",
-          + "subnet-03bf999b681376a8a",
+          + "subnet-044f05d3f1a1c0f45",
+          + "subnet-045f67f94d99d773b",
         ]
       + tags                   = {
           + "Name" = "tags"
@@ -1955,7 +3329,7 @@ session_duration  = 3600
 
           + principals {
               + identifiers = [
-                  + "arn:aws:iam::019819012441:root",
+                  + "arn:aws:iam::933714606193:root",
                 ]
               + type        = "AWS"
             }
@@ -1986,7 +3360,7 @@ session_duration  = 3600
 
           + principals {
               + identifiers = [
-                  + "arn:aws:iam::019819012441:user/Whiz_User_85401.25377679",
+                  + "arn:aws:iam::933714606193:user/Whiz_User_85401.17157593",
                 ]
               + type        = "AWS"
             }
@@ -2014,8 +3388,7 @@ session_duration  = 3600
     }
 
   # module.eks.module.kms.aws_kms_alias.this["cluster"] will be created
-  + resource "aws_kms_ali
-as" "this" {
+  + resource "aws_kms_alias" "this" {
       + arn            = (known after apply)
       + id             = (known after apply)
       + name           = "alias/eks/eks-dev-cluster-eks-mng"
@@ -2033,7 +3406,8 @@ as" "this" {
       + enable_key_rotation                = true
       + id                                 = (known after apply)
       + is_enabled                         = true
-      + key_id                             = (known after apply)
+      + key_id                           
+  = (known after apply)
       + key_usage                          = "ENCRYPT_DECRYPT"
       + multi_region                       = false
       + policy                             = (known after apply)
@@ -2061,4 +3435,202 @@ as" "this" {
       + id = (known after apply)
     }
 
-Plan: 71 to add, 0 to change, 0 to destroy.
+Plan: 99 to add, 0 to change, 0 to destroy.
+
+Changes to Outputs:
+  + access_entries                                   = {
+      + cluster_creator = {
+          + access_entry_arn  = (known after apply)
+          + cluster_name      = "eks-dev-cluster-eks-mng"
+          + created_at        = (known after apply)
+          + id                = (known after apply)
+          + kubernetes_groups = (known after apply)
+          + modified_at       = (known after apply)
+          + principal_arn     = "arn:aws:iam::933714606193:user/Whiz_User_85401.17157593"
+          + tags              = null
+          + tags_all          = (known after apply)
+          + timeouts          = null
+          + type              = "STANDARD"
+          + user_name         = (known after apply)
+        }
+    }
+  + cloudwatch_log_group_arn                         = (known after apply)
+  + cloudwatch_log_group_name                        = "/aws/eks/eks-dev-cluster-eks-mng/cluster"
+  + cluster_addons                                   = {
+      + coredns    = {
+          + addon_name                  = "coredns"
+          + addon_version               = (known after apply)
+          + arn                         = (known after apply)
+          + cluster_name                = "eks-dev-cluster-eks-mng"
+          + configuration_values        = (known after apply)
+          + created_at                  = (known after apply)
+          + id                          = (known after apply)
+          + modified_at                 = (known after apply)
+          + preserve                    = true
+          + resolve_conflicts           = null
+          + resolve_conflicts_on_create = "OVERWRITE"
+          + resolve_conflicts_on_update = "OVERWRITE"
+          + service_account_role_arn    = null
+          + tags                        = null
+          + tags_all                    = (known after apply)
+          + timeouts                    = {
+              + create = null
+              + delete = null
+              + update = null
+            }
+        }
+      + kube-proxy = {
+          + addon_name                  = "kube-proxy"
+          + addon_version               = (known after apply)
+          + arn                         = (known after apply)
+          + cluster_name                = "eks-dev-cluster-eks-mng"
+          + configuration_values        = (known after apply)
+          + created_at                  = (known after apply)
+          + id                          = (known after apply)
+          + modified_at                 = (known after apply)
+          + preserve                    = true
+          + resolve_conflicts           = null
+          + resolve_conflicts_on_create = "OVERWRITE"
+          + resolve_conflicts_on_update = "OVERWRITE"
+          + service_account_role_arn    = null
+          + tags                        = null
+          + tags_all                    = (known after apply)
+          + timeouts                    = {
+              + create = null
+              + delete = null
+              + update = null
+            }
+        }
+      + vpc-cni    = {
+          + addon_name                  = "vpc-cni"
+          + addon_version               = (known after apply)
+          + arn                         = (known after apply)
+          + cluster_name                = "eks-dev-cluster-eks-mng"
+          + configuration_values        = jsonencode(
+                {
+                  + env = {
+                      + ENABLE_PREFIX_DELEGATION = "true"
+                      + WARM_PREFIX_TARGET       = "1"
+                    }
+                }
+            )
+          + created_at                  = (known after apply)
+          + id                          = (known after apply)
+          + modified_at                 = (known after apply)
+          + preserve                    = true
+          + resolve_conflicts           = null
+          + resolve_conflicts_on_create = "OVERWRITE"
+          + resolve_conflicts_on_update = "OVERWRITE"
+          + service_account_role_arn    = (known after apply)
+          + tags                        = null
+          + tags_all                    = (known after apply)
+          + timeouts                    = {
+              + create = null
+              + delete = null
+              + update = null
+            }
+        }
+    }
+  + cluster_arn                                      = (known after apply)
+  + cluster_certificate_authority_data               = (known after apply)
+  + cluster_dualstack_oidc_issuer_url                = (known after apply)
+  + cluster_endpoint                                 = (known after apply)
+  + cluster_iam_role_arn                             = (known after apply)
+  + cluster_iam_role_name                            = (known after apply)
+  + cluster_iam_role_unique_id                       = (known after apply)
+  + cluster_id                                       = (known after apply)
+  + cluster_identity_providers                       = {}
+  + cluster_ip_family                                = "ipv4"
+  + cluster_name                                     = "eks-dev-cluster-eks-mng"
+  + cluster_oidc_issuer_url                          = (known after apply)
+  + cluster_platform_version                         = (known after apply)
+  + cluster_primary_security_group_id                = (known after apply)
+  + cluster_security_group_arn                       = (known after apply)
+  + cluster_security_group_id                        = (known after apply)
+  + cluster_service_cidr                             = (known after apply)
+  + cluster_status                                   = (known after apply)
+  + cluster_tls_certificate_sha1_fingerprint         = (known after apply)
+  + eks_managed_node_groups                          = {
+      + access_entries = {
+          + autoscaling_group_schedule_arns    = {}
+          + iam_role_arn                       = (known after apply)
+          + iam_role_name                      = (known after apply)
+          + iam_role_unique_id                 = (known after apply)
+          + launch_template_arn                = (known after apply)
+          + launch_template_id                 = (known after apply)
+          + launch_template_latest_version     = (known after apply)
+          + launch_template_name               = (known after apply)
+          + node_group_arn                     = (known after apply)
+          + node_group_autoscaling_group_names = (known after apply)
+          + node_group_id                      = (known after apply)
+          + node_group_labels                  = null
+          + node_group_resources               = (known after apply)
+          + node_group_status                  = (known after apply)
+          + node_group_taints                  = []
+          + platform                           = "linux"
+        }
+      + complete       = {
+          + autoscaling_group_schedule_arns    = {}
+          + iam_role_arn              
+         = (known after apply)
+          + iam_role_name                      = "eks-managed-ng-role"
+          + iam_role_unique_id                 = (known after apply)
+          + launch_template_arn                = (known after apply)
+          + launch_template_id                 = (known after apply)
+          + launch_template_latest_version     = (known after apply)
+          + launch_template_name               = (known after apply)
+          + node_group_arn                     = (known after apply)
+          + node_group_autoscaling_group_names = (known after apply)
+          + node_group_id                      = (known after apply)
+          + node_group_labels                  = {
+              + GithubOrg  = "terraform-aws-modules"
+              + GithubRepo = "terraform-aws-eks"
+            }
+          + node_group_resources               = (known after apply)
+          + node_group_status                  = (known after apply)
+          + node_group_taints                  = [
+              + {
+                  + effect = "NO_SCHEDULE"
+                  + key    = "CriticalAddonsOnly"
+                  + value  = "true"
+                },
+            ]
+          + platform                           = "linux"
+        }
+      + tags           = {
+          + autoscaling_group_schedule_arns    = {}
+          + iam_role_arn                       = (known after apply)
+          + iam_role_name                      = (known after apply)
+          + iam_role_unique_id                 = (known after apply)
+          + launch_template_arn                = (known after apply)
+          + launch_template_id                 = (known after apply)
+          + launch_template_latest_version     = (known after apply)
+          + launch_template_name               = (known after apply)
+          + node_group_arn                     = (known after apply)
+          + node_group_autoscaling_group_names = (known after apply)
+          + node_group_id                      = (known after apply)
+          + node_group_labels                  = null
+          + node_group_resources               = (known after apply)
+          + node_group_status                  = (known after apply)
+          + node_group_taints                  = []
+          + platform                           = "linux"
+        }
+    }
+  + eks_managed_node_groups_autoscaling_group_names  = (known after apply)
+  + fargate_profiles                                 = {}
+  + kms_key_arn                                      = (known after apply)
+  + kms_key_id                                       = (known after apply)
+  + kms_key_policy                                   = (known after apply)
+  + node_security_group_arn                          = (known after apply)
+  + node_security_group_id                           = (known after apply)
+  + oidc_provider                                    = (known after apply)
+  + oidc_provider_arn                                = (known after apply)
+  + self_managed_node_groups                         = {}
+  + self_managed_node_groups_autoscaling_group_names = []
+
+─────────────────────────────────────────────────────────────────────────────
+
+Saved the plan to: eks.plan
+
+To perform exactly these actions, run the following command to apply:
+    terraform apply "eks.plan"

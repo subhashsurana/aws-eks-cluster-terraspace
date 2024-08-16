@@ -4,7 +4,29 @@ provider "aws" {
 
 provider "helm" {
   kubernetes {
-    config_path = "~/.kube/config"
+    host                   = module.eks.cluster_endpoint
+    cluster_ca_certificate = base64decode(module.eks.cluster_certificate_authority_data)
+
+    exec {
+      api_version = "client.authentication.k8s.io/v1beta1"
+      command     = "aws"
+      # This requires the awscli to be installed locally where Terraform is executed
+      args = ["eks", "get-token", "--cluster-name", module.eks.cluster_name]
+    }
+  }
+}
+
+provider "kubectl" {
+  apply_retry_count      = 5
+  host                   = module.eks.cluster_endpoint
+  cluster_ca_certificate = base64decode(module.eks.cluster_certificate_authority_data)
+  load_config_file       = false
+
+  exec {
+    api_version = "client.authentication.k8s.io/v1beta1"
+    command     = "aws"
+    # This requires the awscli to be installed locally where Terraform is executed
+    args = ["eks", "get-token", "--cluster-name", module.eks.cluster_name]
   }
 }
 
@@ -28,6 +50,43 @@ locals {
 }
 
 ################################################################################
+# KUBECONFIG TO ACCESS EKS CLUSTER
+################################################################################
+# Preferred method to create cluster config
+
+resource "null_resource" "kubeconfig" {
+  provisioner "local-exec" {
+    command = "aws eks update-kubeconfig --name ${module.eks.cluster_name} --region ${local.region}"
+  }
+
+  depends_on = [module.eks]
+}
+
+# Alternate method for kube config 
+
+# locals {
+#   kubeconfig = templatefile("${path.module}/kubeconfig.tpl", {
+#     cluster_name      = local.name
+#     cluster_endpoint  = module.eks.cluster_endpoint
+#     cluster_ca        = base64decode(module.eks.cluster_certificate_authority_data)
+#   })
+#   kube_config_dir = pathexpand("~/.kube/")
+# }
+
+# resource "null_resource" "create_kube_config_dir" {
+#   provisioner "local-exec" {
+#     command = "mkdir -p ${local.kube_config_dir}"
+#   }
+# }
+
+# resource "local_file" "kubeconfig_home" {
+#   depends_on = [null_resource.create_kube_config_dir]
+
+#   content  = local.kubeconfig
+#   filename = "${local.kube_config_dir}/config"
+# }
+
+################################################################################
 # EKS Module
 ################################################################################
 
@@ -38,6 +97,7 @@ module "eks" {
   cluster_version                = local.cluster_version
   cluster_endpoint_public_access = true
 
+  # create_kms_key            = false
   # cluster_encryption_config = [{
   #   provider_key_arn = aws_kms_key.eks.arn
   #   resources        = ["secrets"]
@@ -119,10 +179,11 @@ module "eks" {
 
       taints = [
         {
-          key    = "dedicated"
-          value  = "gpuGroup"
+          key    = "CriticalAddonsOnly"
+          value  = "true"
           effect = "NO_SCHEDULE"
-        }
+        },
+
       ]
 
       update_config = {
@@ -291,6 +352,7 @@ module "eks" {
 }
 }
 
+
 ################################################################################
 # Supporting Resources
 ################################################################################
@@ -368,14 +430,25 @@ module "iam_assumable_role_karpenter_irsa" {
   tags = local.tags
 }
 
-# data "aws_iam_policy" "ssm_managed_instance" {
-#   arn = "arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore"
-# }
+################################################################################
+# Karpenter
+################################################################################
 
-# resource "aws_iam_role_policy_attachment" "karpenter_ssm_policy" {
-#   role       = "${var.node_group_name}-role"
-#   policy_arn = data.aws_iam_policy.ssm_managed_instance.arn
-# }
+module "karpenter" {
+  source = "terraform-aws-modules/eks/aws//modules/karpenter"
+
+  cluster_name = module.eks.cluster_name
+
+  enable_pod_identity             = true
+  create_pod_identity_association = true
+
+  # Used to attach additional IAM policies to the Karpenter node IAM role
+  node_iam_role_additional_policies = {
+    AmazonSSMManagedInstanceCore = "arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore"
+  }
+
+  tags = local.tags
+}
 
 resource "aws_iam_instance_profile" "karpenter" {
   name = "KarpenterNodeInstanceProfile-${var.cluster_name}"
@@ -483,13 +556,13 @@ resource "aws_iam_role" "this" {
 
 resource "helm_release" "karpenter" {
   depends_on       = [module.eks.kubeconfig]
-  namespace        = "karpenter"
+  namespace        = "kube-system"
   create_namespace = false
 
   name       = "karpenter"
   repository = "https://charts.karpenter.sh"
   chart      = "karpenter"
-  version    = "v0.7.2"
+  version    = "v0.16.3"
 
   set {
     name  = "serviceAccount.annotations.eks\\.amazonaws\\.com/role-arn"
@@ -521,4 +594,150 @@ resource "helm_release" "karpenter" {
     value = false
   }
 
+}
+
+resource "kubectl_manifest" "karpenter_node_class" {
+  yaml_body = <<-YAML
+    apiVersion: karpenter.k8s.aws/v1beta1
+    kind: EC2NodeClass
+    metadata:
+      name: default
+    spec:
+      amiFamily: AL2023
+      role: ${module.karpenter.node_iam_role_name}
+      subnetSelectorTerms:
+        - tags:
+            karpenter.sh/discovery: ${module.eks.cluster_name}
+      securityGroupSelectorTerms:
+        - tags:
+            karpenter.sh/discovery: ${module.eks.cluster_name}
+      tags:
+        karpenter.sh/discovery: ${module.eks.cluster_name}
+  YAML
+
+  depends_on = [
+    helm_release.karpenter
+  ]
+}
+
+  resource "kubectl_manifest" "karpenter_node_pool" {
+  yaml_body = <<-YAML
+    apiVersion: karpenter.sh/v1beta1
+    kind: NodePool
+    metadata:
+      name: default
+    spec:
+      template:
+        spec:
+          nodeClassRef:
+            name: default
+          requirements:
+            - key: "karpenter.k8s.aws/instance-category"
+              operator: In
+              values: ["c", "m", "r"]
+            - key: "karpenter.k8s.aws/instance-cpu"
+              operator: In
+              values: ["4", "8", "16", "32"]
+            - key: "karpenter.k8s.aws/instance-hypervisor"
+              operator: In
+              values: ["nitro"]
+            - key: "karpenter.k8s.aws/instance-generation"
+              operator: Gt
+              values: ["2"]
+      limits:
+        cpu: 1000
+      disruption:
+        consolidationPolicy: WhenEmpty
+        consolidateAfter: 30s
+  YAML
+
+  depends_on = [
+    kubectl_manifest.karpenter_node_class
+  ]
+}
+
+
+# Example deployment using the [pause image](https://www.ianlewis.org/en/almighty-pause-container)
+# and starts with zero replicas
+resource "kubectl_manifest" "karpenter_example_deployment" {
+  yaml_body = <<-YAML
+    apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      name: inflate
+    spec:
+      replicas: 0
+      selector:
+        matchLabels:
+          app: inflate
+      template:
+        metadata:
+          labels:
+            app: inflate
+        spec:
+          terminationGracePeriodSeconds: 0
+          containers:
+            - name: inflate
+              image: public.ecr.aws/eks-distro/kubernetes/pause:3.7
+              resources:
+                requests:
+                  cpu: 1
+  YAML
+
+  depends_on = [
+    helm_release.karpenter 
+  ]
+}
+
+################################################################################
+# AWS Load Balancer Controller
+################################################################################
+
+module "aws_load_balancer_controller_irsa_role" {
+  source  = "terraform-aws-modules/iam/aws//modules/iam-role-for-service-accounts-eks"
+  version = "5.3.1"
+
+  role_name = "aws-load-balancer-controller"
+
+  attach_load_balancer_controller_policy = true
+
+  oidc_providers = {
+    ex = {
+      provider_arn               = module.eks.oidc_provider_arn
+      namespace_service_accounts = ["kube-system:aws-load-balancer-controller"]
+    }
+  }
+}
+
+resource "helm_release" "aws_load_balancer_controller" {
+  name = "aws-load-balancer-controller"
+
+  repository = "https://aws.github.io/eks-charts"
+  chart      = "aws-load-balancer-controller"
+  namespace  = "kube-system"
+
+  set {
+    name  = "replicaCount"
+    value = 1
+  }
+
+  set {
+    name  = "clusterName"
+    value = module.eks.cluster_id
+  }
+
+  set {
+    name  = "serviceAccount.name"
+    value = "aws-load-balancer-controller"
+  }
+
+  set {
+    name  = "serviceAccount.annotations.eks\\.amazonaws\\.com/role-arn"
+    value = module.aws_load_balancer_controller_irsa_role.iam_role_arn
+  }
+
+   depends_on = [
+    module.eks, # Ensure EKS is created first
+    module.aws_load_balancer_controller_irsa_role # Ensure IAM role for Service account is created
+  ]
 }

@@ -1,3 +1,5 @@
+data.aws_availability_zones.available: Reading...
+data.aws_availability_zones.available: Read complete after 1s [id=us-east-1]
 
 Terraform used the selected providers to generate the following execution
 plan. Resource actions are indicated with the following symbols:
@@ -601,7 +603,8 @@ Changes to Outputs:
     ]
   + private_route_table_association_ids         = [
       + (known after apply),
-      + (known after apply),
+      + (kno
+wn after apply),
     ]
   + private_route_table_ids                     = [
       + (known after apply),
@@ -666,3 +669,10 @@ Changes to Outputs:
   + vpc_main_route_table_id                     = (known after apply)
   + vpc_owner_id                                = (known after apply)
   + vpc_secondary_cidr_blocks                   = []
+
+─────────────────────────────────────────────────────────────────────────────
+
+Saved the plan to: vpc.plan
+
+To perform exactly these actions, run the following command to apply:
+    terraform apply "vpc.plan"
